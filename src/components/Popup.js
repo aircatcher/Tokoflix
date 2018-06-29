@@ -26,7 +26,7 @@ class Popup extends React.Component
 
                     <div className="form">
                       <h3>Login to your account</h3>
-                      <form action="#" method="post">
+                      <form action={null} method="post">
                         <input type="text" name="Username" placeholder="Username" required="" />
                         <input type="password" name="Password" placeholder="Password" required="" />
                         <input type="submit" value="Login" />
@@ -35,7 +35,7 @@ class Popup extends React.Component
 
                     <div className="form">
                       <h3>Create an account</h3>
-                      <form action="#" method="post">
+                      <form action={null} method="post">
                         <input type="text" name="Username" placeholder="Username" required="" />
                         <input type="password" name="Password" placeholder="Password" required="" />
                         <input type="email" name="Email" placeholder="Email Address" required="" />
@@ -44,7 +44,7 @@ class Popup extends React.Component
                       </form>
                     </div>
 
-                    <div className="cta"><a href="#">Forgot your password?</a></div>
+                    <div className="cta"><a href={null}>Forgot your password?</a></div>
                     
                   </div>
                 </div>

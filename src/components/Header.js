@@ -4,6 +4,8 @@ class Header extends React.Component
 {
   render()
   {
+    const { movie } = this.props;
+
     return (
       <div className="header">
         <div className="container">
@@ -11,21 +13,32 @@ class Header extends React.Component
             <a href="index.html"><h1>Tokoflix<span>Movies</span></h1></a>
           </div>
           <div className="w3_search">
-            <form action="#" method="post">
-              <input type="text" name="Search" placeholder="Search" required=""/>
-              <input type="submit" value="Go"/>
-            </form>
+            {/* <form action={null} method="post"> */}
+              <input
+                type="text"
+                name="Search"
+                placeholder="Search ..."
+                required=""
+                onSubmit={this.onSearchHandler}
+              />
+              {/* <input type="submit" value="Go"/> */}
+            {/* </form> */}
           </div>
           {/* <div className="w3l_sign_in_register">
             <ul>
               <li><i className="fa fa-phone" aria-hidden="true"></i> (+000) 123 345 653</li>
-              <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
+              <li><a href={null} data-toggle="modal" data-target="{null}myModal">Login</a></li>
             </ul>
           </div> */}
           <div className="clearfix"> </div>
         </div>
       </div>
     );
+  }
+
+  onSearchHandler(e)
+  {
+    console.log(e.target.value);
   }
 }
 

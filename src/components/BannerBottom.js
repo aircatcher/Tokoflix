@@ -22,11 +22,11 @@ class BannerBottom extends React.Component
                       <p>2016</p>
                       <div className="block-stars">
                         <ul className="w3l-ratings">
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><span><i className="fa fa-star" aria-hidden="true"></i></span></a></li>
+                          <li><a href="/"><span><i className="fa fa-star" aria-hidden="true"></i></span></a></li>
+                          <li><a href="/"><span><i className="fa fa-star" aria-hidden="true"></i></span></a></li>
+                          <li><a href="/"><span><i className="fa fa-star" aria-hidden="true"></i></span></a></li>
+                          <li><a href="/"><span><i className="fa fa-star-half-o" aria-hidden="true"></i></span></a></li>
                         </ul>
                       </div>
                       <div className="clearfix"></div>
@@ -50,11 +50,11 @@ class BannerBottom extends React.Component
                       <p>2016</p>
                       <div className="block-stars">
                         <ul className="w3l-ratings">
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                         </ul>
                       </div>
                       <div className="clearfix"></div>
@@ -78,11 +78,11 @@ class BannerBottom extends React.Component
                       <p>2016</p>
                       <div className="block-stars">
                         <ul className="w3l-ratings">
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                         </ul>
                       </div>
                       <div className="clearfix"></div>
@@ -106,11 +106,11 @@ class BannerBottom extends React.Component
                       <p>2016</p>
                       <div className="block-stars">
                         <ul className="w3l-ratings">
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                         </ul>
                       </div>
                       <div className="clearfix"></div>
@@ -134,11 +134,11 @@ class BannerBottom extends React.Component
                       <p>2016</p>
                       <div className="block-stars">
                         <ul className="w3l-ratings">
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                         </ul>
                       </div>
                       <div className="clearfix"></div>
@@ -162,11 +162,11 @@ class BannerBottom extends React.Component
                       <p>2016</p>
                       <div className="block-stars">
                         <ul className="w3l-ratings">
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
                         </ul>
                       </div>
                       <div className="clearfix"></div>
@@ -190,11 +190,11 @@ class BannerBottom extends React.Component
                       <p>2016</p>
                       <div className="block-stars">
                         <ul className="w3l-ratings">
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                         </ul>
                       </div>
                       <div className="clearfix"></div>
@@ -218,11 +218,11 @@ class BannerBottom extends React.Component
                       <p>2016</p>
                       <div className="block-stars">
                         <ul className="w3l-ratings">
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                         </ul>
                       </div>
                       <div className="clearfix"></div>
@@ -246,11 +246,11 @@ class BannerBottom extends React.Component
                       <p>2016</p>
                       <div className="block-stars">
                         <ul className="w3l-ratings">
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                          <li><a href="/"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                         </ul>
                       </div>
                       <div className="clearfix"></div>

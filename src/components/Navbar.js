@@ -22,7 +22,7 @@ class Navbar extends React.Component
                 <ul className="nav navbar-nav">
                   <li className="active"><a href="index.html">Home</a></li>
                   <li className="dropdown">
-                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">Genres <b className="caret"></b></a>
+                    <a href={null} className="dropdown-toggle" data-toggle="dropdown">Genres <b className="caret"></b></a>
                     <ul className="dropdown-menu multi-column columns-3">
                       <li>
                       <div className="col-sm-4">
@@ -63,7 +63,7 @@ class Navbar extends React.Component
                   <li><a href="series.html">tv - series</a></li>
                   <li><a href="news.html">news</a></li>
                   <li className="dropdown">
-                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">Country <b className="caret"></b></a>
+                    <a href={null} className="dropdown-toggle" data-toggle="dropdown">Country <b className="caret"></b></a>
                     <ul className="dropdown-menu multi-column columns-3">
                       <li>
                         <div className="col-sm-4">

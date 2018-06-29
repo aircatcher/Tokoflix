@@ -33,11 +33,11 @@ class LatestSeries extends React.Component
                           <a href="genres.html">Family</a>								
                         </p>
                         <p className="fexi_header_para fexi_header_para1"><span>Star Rating<label>:</label></span>
-                          <a href="#"><i className="fa fa-star" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a>
+                          <a href={null}><span><i className="fa fa-star" aria-hidden="true"></i></span></a>
+                          <a href={null}><span><i className="fa fa-star" aria-hidden="true"></i></span></a>
+                          <a href={null}><span><i className="fa fa-star-half-o" aria-hidden="true"></i></span></a>
+                          <a href={null}><span><i className="fa fa-star-o" aria-hidden="true"></i></span></a>
+                          <a href={null}><span><i className="fa fa-star-o" aria-hidden="true"></i></span></a>
                         </p>
                       </div>
                       <div className="clearfix"> </div>
@@ -54,11 +54,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -80,11 +80,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -106,11 +106,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -132,11 +132,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -158,11 +158,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -184,11 +184,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -222,11 +222,11 @@ class LatestSeries extends React.Component
                           <a href="genres.html">Horror</a>								
                         </p>
                         <p className="fexi_header_para fexi_header_para1"><span>Star Rating<label>:</label></span>
-                          <a href="#"><i className="fa fa-star" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a>
                         </p>
                       </div>
                       <div className="clearfix"> </div>
@@ -243,11 +243,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -269,11 +269,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -295,11 +295,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -321,11 +321,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -347,11 +347,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -373,11 +373,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -411,11 +411,11 @@ class LatestSeries extends React.Component
                           <a href="genres.html">Adventure</a>								
                         </p>
                         <p className="fexi_header_para fexi_header_para1"><span>Star Rating<label>:</label></span>
-                          <a href="#"><i className="fa fa-star" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a>
-                          <a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a>
+                          <a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a>
                         </p>
                       </div>
                       <div className="clearfix"> </div>
@@ -432,11 +432,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -458,11 +458,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -484,11 +484,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -510,11 +510,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -536,11 +536,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>
@@ -562,11 +562,11 @@ class LatestSeries extends React.Component
                               <p>2016</p>
                               <div className="block-stars">
                                 <ul className="w3l-ratings">
-                                  <li><a href="#"><i className="fa fa-star" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                  <li><a href="#"><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                  <li><a href={null}><i className="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                               </div>
                               <div className="clearfix"></div>

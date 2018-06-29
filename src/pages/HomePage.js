@@ -9,7 +9,7 @@ import CarouselBanner from '../components/Banner';
 import BannerBottom from '../components/BannerBottom';
 import SocialIcons from '../components/SocialIcons';
 
-import CatGeneral from '../components/CatGeneral';
+import Latest from '../components/Latest';
 import LatestSeries from '../components/LatestSeries';
 
 class HomePage extends React.Component
@@ -22,13 +22,13 @@ class HomePage extends React.Component
         <Popup />
         <Navbar />
 
-        <CarouselBanner />
-        <BannerBottom />
+        {/* <CarouselBanner /> */}
+        {/* <BannerBottom /> */}
         <SocialIcons />
 
-        <CatGeneral />
+        <Latest />
         
-        <LatestSeries />
+        {/* <LatestSeries /> */}
         
         <Footer />
       </div>

@@ -5,7 +5,7 @@ class Banner extends React.Component
   render()
   {
     return (
-      <div id="slidey" style={{ display:'none' }}>
+      <div id="slidey">
         <ul>
           <li><img src="images/5.jpg" alt=" "/><p className='title'>Tarzan</p><p className='description'> Tarzan, having acclimated to life in London, is called back to his former home in the jungle to investigate the activities at a mining encampment.</p></li>
           <li><img src="images/2.jpg" alt=" "/><p className='title'>Maximum Ride</p><p className='description'>Six children, genetically cross-bred with avian DNA, take flight around the country to discover their origins. Along the way, their mysterious past is ...</p></li>
