@@ -19,7 +19,7 @@ class Header extends React.Component
                 name="Search"
                 placeholder="Search ..."
                 required=""
-                onSubmit={this.onSearchHandler}
+                onChange={this.onSearchHandler}
               />
               {/* <input type="submit" value="Go"/> */}
             {/* </form> */}
@@ -34,11 +34,6 @@ class Header extends React.Component
         </div>
       </div>
     );
-  }
-
-  onSearchHandler(e)
-  {
-    console.log(e.target.value);
   }
 }
 

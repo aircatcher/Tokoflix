@@ -9,6 +9,8 @@ class Latest extends React.Component
   {
     super(props);
 
+    this.onSearchHandler = this.onSearchHandler.bind(this)
+
     // const movies = [
     //   {
     //     id: 0,
@@ -40,7 +42,7 @@ class Latest extends React.Component
 
     this.state = {};
 
-    this.performSearch("woman");
+    this.performSearch("");
   }
   
   performSearch(keyword)
@@ -48,18 +50,33 @@ class Latest extends React.Component
     const tmdbURL = 'https://api.themoviedb.org/3/search/movie?api_key=1c67c0067c6a82a74b92665f1e488325&query=' + keyword;
     $.ajax({
       url: tmdbURL,
-      success: (searchResults) => 
+      success: (searchResults) =>
       {
         // console.log('Successfuly fetched the Movie data');
         const results = searchResults.results;
         
         // console.log(results);
         var movieRows = [];
-        results.forEach(movie =>
+
+        if(results.length != 0)
         {
-          const mRow = <MovieRow key={movie.id} movie={movie} />; 
-          movieRows.push(mRow);
-        });
+          results.forEach(movie =>
+          {
+            const mRow = <MovieRow key={movie.id} movie={movie} />; 
+            movieRows.push(mRow);
+          });
+        }
+        else
+        {
+          movieRows.push(
+            <div>
+              <h3>Nothing found</h3>
+              <br/>
+              <p>Based on your search, we found none.</p>
+              <p>Make sure to check your search again or subscribe for more upcoming movies.</p>
+            </div>
+          );
+        }
 
         this.setState({ rows: movieRows });
       },
@@ -70,11 +87,25 @@ class Latest extends React.Component
     })
   }
 
+  onSearchHandler(e)
+  {
+    // console.log(e.target.value);
+    const searchTerm = e.target.value;
+    this.performSearch(searchTerm);
+  }
+
   render()
   {
     return (
       <div className="general">
         <div className="container">
+        <input
+                type="text"
+                name="Search"
+                placeholder="Search ..."
+                required=""
+                onChange={this.onSearchHandler}
+                />
           <h4 className="latest-text w3_latest_text" style={{ marginLeft: '0' }}>Latest Movies</h4>
           <div className="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
             {/* <ul id="myTab" className="nav nav-tabs" role="tablist">
@@ -87,7 +118,12 @@ class Latest extends React.Component
               <div role="tabpanel" className="tab-pane fade active in" id="home" aria-labelledby="home-tab">
                 <div className="w3_agile_featured_movies">
 
-                  { this.state.rows }
+                  {
+                    this.state.rows == undefined ?
+                      <p>Please search by title above ...</p>
+                    :
+                      this.state.rows
+                  }
 
                   <div className="clearfix"> </div>
                 </div>
