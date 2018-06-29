@@ -20,7 +20,7 @@ class Footer extends React.Component
               </div>
             </div>
             <div className="col-md-6 w3ls_footer_grid_right">
-              <a href="index.html"><h2>One<span>Movies</span></h2></a>
+              <a href="index.html"><h2>Tokoflix<span>Movies</span></h2></a>
             </div>
             <div className="clearfix"> </div>
           </div>
