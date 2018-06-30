@@ -2,6 +2,19 @@ import React from 'react';
 
 class MovieRow extends React.Component
 {
+  constructor(props)
+  {
+    super(props);
+    this.viewDetails = this.viewDetails.bind(this);
+  }
+
+  viewDetails()
+  {
+    const { movie } = this.props;
+    localStorage.setItem('selMovieID', movie.id);
+    window.location.href = '/details';
+  }
+
   render()
   {
     const { movie } = this.props;
@@ -9,7 +22,7 @@ class MovieRow extends React.Component
     return (
       <div className="col-md-2" id="movie-row-container">
       
-        <a href="single.html" className="hvr-shutter-out-horizontal">
+        <a onClick={this.viewDetails} className="hvr-shutter-out-horizontal" style={{cursor: 'pointer'}}>
           {(
             // console.log(movie.poster_path),
             movie.poster_path != null ?
@@ -22,7 +35,7 @@ class MovieRow extends React.Component
 
         <div className="mid-1 agileits_w3layouts_mid_1_home">
           <div className="w3l-movie-text">
-            <h6><a href="single.html">{movie.title}</a></h6>
+            <h6><a onClick={this.viewDetails} style={{cursor: 'pointer'}}>{movie.title}</a></h6>
           </div>
           <div className="mid-2 agile_mid_2_home">
             <p>2016</p>

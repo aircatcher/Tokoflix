@@ -8,6 +8,19 @@
   height: 320px
 }
 
+.movie-preview-container
+{
+  margin-top: 40px;
+  width: 100%;
+  text-align: center
+}
+
+.movie-preview
+{
+  display: inline-block;
+  margin: 2px
+}
+
 @media (max-width: 414px)
 {
   .agileits_w3layouts_mid_1_home

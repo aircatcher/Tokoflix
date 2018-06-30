@@ -1,14 +1,12 @@
 import React from 'react';
 import $ from 'jquery';
 
-import MovieRow from './MovieRow';
+import MovieRow from '../MovieRow';
 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from './Navbar';
+import Popup from './Popup';
 
-import Popup from '../components/Popup';
-
-import '../includes/css/style.css';
+import '../../includes/css/style.css';
 
 class Latest extends React.Component
 {
@@ -134,7 +132,7 @@ class Latest extends React.Component
   {
     return (
       <div
-        style={{ overflowY: 'auto' }}
+        // style={{ overflowY: 'auto' }}
         onScroll={this.handleScroll}
         ref={scroller => this.scroller = scroller}
       >

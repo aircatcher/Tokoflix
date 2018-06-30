@@ -1,16 +1,16 @@
 import React from 'react';
 
-// import Navbar from '../components/Navbar';
-// import Header from '../components/Header';
-import Footer from '../components/Footer';
+// import Navbar from '../components/page/Navbar';
+// import Header from '../components/page/Header';
+import Footer from '../components/page/Footer';
 
-// import Popup from '../components/Popup';
-// import CarouselBanner from '../components/Banner';
-// import BannerBottom from '../components/BannerBottom';
-import SocialIcons from '../components/SocialIcons';
+// import Popup from '../components/page/Popup';
+// import CarouselBanner from '../components/page/Banner';
+// import BannerBottom from '../components/page/BannerBottom';
+import SocialIcons from '../components/page/SocialIcons';
 
-import Latest from '../components/Latest';
-// import LatestSeries from '../components/LatestSeries';
+import Latest from '../components/page/Latest';
+// import LatestSeries from '../components/page/LatestSeries';
 
 class HomePage extends React.Component
 {
