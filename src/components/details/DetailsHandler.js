@@ -105,8 +105,13 @@ class DetailsHandler extends React.Component
             <div class="clearfix"> </div>
           </div>
           <div class="clearfix"> </div>`;
-
-        document.getElementById('movie-details-sn-page').innerHTML = md;        
+        document.getElementById('movie-details-sn-page').innerHTML = md;
+        
+        let breadcrumb = '';
+        breadcrumb =
+        `<li><a href="/">Home</a></li>
+        <li className="active"><a href=${localStorage.getItem('movieDetailsURL')}>${selMovie.title}</a></li>`;
+        document.getElementById('breadcrumb-movie-details').innerHTML = breadcrumb;
 
         this.setState(
         {
@@ -170,10 +175,7 @@ class DetailsHandler extends React.Component
           <div className="container">
             {/* /w3l-medile-movies-grids */}
             <div className="agileits-single-top">
-              <ol className="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li className="active">Single</li>
-              </ol>
+              <ol className="breadcrumb" id="breadcrumb-movie-details"></ol>
             </div>
 
             <div className="single-page-agile-info">
