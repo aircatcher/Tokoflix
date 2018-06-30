@@ -198,7 +198,7 @@ class Latest extends React.Component
                 <input
                   type="text"
                   name="Search"
-                  placeholder="Search ..."
+                  placeholder="Search for movies or series ..."
                   required=""
                   onChange={this.onSearchHandler}
                 />
@@ -222,7 +222,7 @@ class Latest extends React.Component
           <div className="container">
             <div className="container-fluid">
               <div class="col-md-6">
-                <h4 class="latest-text w3_latest_text" id="page-heading-text" style={{marginLeft: 0}}>{ this.state.heading }</h4>
+                <h4 class="latest-text w3_latest_text" id="page-heading-text" style={{marginLeft: -15}}>{ this.state.heading }</h4>
               </div>
               <div class="col-md-6">
                 <ul class="pagination pull-right" style={{margin: '10px 0'}}>

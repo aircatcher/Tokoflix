@@ -29,7 +29,20 @@ class DetailsHandler extends React.Component
   {
     var api_key = '1c67c0067c6a82a74b92665f1e488325';
     var movieID = localStorage.getItem('selMovieID');
-    const tmdbURL = 'https://api.themoviedb.org/3/movie/' + movieID + '?api_key=' + api_key ;
+    const tmdbURL     = 'https://api.themoviedb.org/3/movie/' + movieID + '?api_key=' + api_key ;
+    const tmdbYoutube = 'https://api.themoviedb.org/3/movie/' + movieID + '/videos?api_key=' + api_key + '&language=en-US';
+
+    /**
+     * Trailer
+     */
+    var ytEmbedURL = '';
+    $.ajax({
+      url: tmdbYoutube,
+      success: (youtubeResult) =>
+      {
+        ytEmbedURL = 'https://www.youtube-nocookie.com/embed/' + youtubeResult.results[0].key;
+      }
+    });
 
     $.ajax({
       url: tmdbURL,
@@ -38,6 +51,9 @@ class DetailsHandler extends React.Component
         // console.log('Successfuly fetched the Movie data');
         // console.log(selMovie);
 
+        /**
+         * Gallery
+        */
         var rootimgURL = 'https://image.tmdb.org/t/p/w500';
         var backdrop = rootimgURL + selMovie.backdrop_path;
         if(selMovie.backdrop_path === null) backdrop = '/images/image-not-available.png';
@@ -75,6 +91,15 @@ class DetailsHandler extends React.Component
                           <td><p><b>${selMovie.vote_count}</b> votes</p></td>
                         </tr>
                       </table>
+
+                      <table class="mov-det-votes">
+                        <tr>
+                          <th><h3>Price</h3></th>
+                        </tr>
+                        <tr>
+                          <td><button>Purchase</button></td>
+                        </tr>
+                      </table>
                     </div>
 
                   </div>
@@ -87,7 +112,7 @@ class DetailsHandler extends React.Component
                       <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">profl</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">buzz</a>
+                      <a class="nav-link" href="#trailer" role="tab" data-toggle="tab">Trailer</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#gallery" role="tab" data-toggle="tab">Gallery</a>
@@ -97,7 +122,9 @@ class DetailsHandler extends React.Component
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="profile">...</div>
-                    <div role="tabpanel" class="tab-pane fade in" id="buzz">bbb</div>
+                    <div role="tabpanel" class="tab-pane fade in" id="trailer">
+                      <iframe width="853" height="480" style="margin-top:5px" src=${ytEmbedURL} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
                     <div role="tabpanel" class="tab-pane fade in" id="gallery">
                       <img src=${backdrop} alt=${selMovie.title} class="img-responsive movie-preview" style="width:60%" />
                     </div>

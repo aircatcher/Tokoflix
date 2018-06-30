@@ -20,7 +20,13 @@ class Navbar extends React.Component
             <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
               <nav>
                 <ul className="nav navbar-nav">
-                  <li className="active"><a href="/">Home</a></li>
+                  {
+                    window.location.pathname === '/' ?
+                      <li className="active"><a href="/">Home</a></li>
+                    :
+                      <li><a href="/">Home</a></li>
+                  }
+                    
                   <li className="dropdown">
                     <a href={null} className="dropdown-toggle" data-toggle="dropdown">Genres <b className="caret"></b></a>
                     <ul className="dropdown-menu multi-column columns-3">

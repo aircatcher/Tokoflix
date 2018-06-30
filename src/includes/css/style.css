@@ -14,6 +14,14 @@
   padding: 7px 20px 0 0
 }
 
+.nav-link { color: black !important }
+.nav-link.active,
+.nav-link:hover
+{
+  background-color: #FF8D1B !important;
+  color: white !important
+}
+
 .movie-preview-container
 {
   margin-top: 40px;
@@ -24,7 +32,7 @@
 .movie-preview
 {
   display: inline-block;
-  margin: 2px
+  margin: 5px 0 0 0
 }
 
 @media (max-width: 414px)

@@ -8,7 +8,6 @@ class MovieRow extends React.Component
   {
     super(props);
     this.viewDetails = this.viewDetails.bind(this);
-    // this.starRatings = this.starRatings.bind(this);
   }
 
   replaceAt = function(index, replacement)
@@ -25,99 +24,12 @@ class MovieRow extends React.Component
 
     title = title.replace(/ /g, "-");
     title = title.replace(/:/g, '');
-    // console.log(title);
 
     var genURL = '/' + movieID + '/' + title;
     localStorage.setItem('selMovieID', movieID);
     localStorage.setItem('movieDetailsURL', genURL);
     window.location.href = genURL;
   }
-
-  // starRatings()
-  // {
-  //   if(rating >= 0     && rating <= 0.5) { <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li> }
-  //   else if(rating >= 0.51  && rating <= 1) { <li><i className="fa fa-star" aria-hidden="true"></i></li> }
-  //   else if(rating >= 1.01  && rating <= 1.5)
-  //   {
-  //     <div>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //     </div>
-  //   }
-  //   else if(rating >= 1.51  && rating <= 2)
-  //   {
-  //     <div>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //     </div>
-  //   }
-  //   else if(rating >= 2.01  && rating <= 2.5)
-  //   {
-  //     <div>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //     </div>
-  //   }
-  //   else if(rating >= 2.51  && rating <= 3)
-  //   {
-  //     <div>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //     </div>
-  //   }
-  //   else if(rating >= 3.01  && rating <= 3.5)
-  //   {
-  //     <div>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>      
-  //     </div>
-  //   }
-  //   else if(rating >= 3.51  && rating <= 4)
-  //   {
-  //     <div>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
-  //     </div>
-  //   }
-  //   else if(rating >= 4.01  && rating <= 4.5)
-  //   {
-  //     <div>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
-  //     </div>
-  //   }
-  //   else(rating >= 4.51  && rating <= 5)
-  //   {
-  //     <div>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //       <li><i className="fa fa-star" aria-hidden="true"></i></li>
-  //     </div>
-  //   }
-  // }
 
   render()
   {
@@ -128,13 +40,12 @@ class MovieRow extends React.Component
       <div className="col-md-2" id="movie-row-container">
       
         <a onClick={this.viewDetails} className="hvr-shutter-out-horizontal" style={{cursor: 'pointer'}}>
-          {(
-            // console.log(movie.poster_path),
+          {
             movie.poster_path != null ?
               <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} title={movie.title} className="img-responsive" alt=" " />
             :
               <img src='images/no-poster.png' title={movie.title} className="img-responsive" alt=" " />
-          )}
+          }
           <div className="w3l-action-icon"><i className="fa fa-play-circle" aria-hidden="true"></i></div>
         </a>
 
