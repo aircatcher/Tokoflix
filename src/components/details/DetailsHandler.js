@@ -53,11 +53,26 @@ class DetailsHandler extends React.Component
                   </div>
 
                   <div class="col-sm-10">
-                    <div class="share">
+
+                    <div class="mov-details">
                       <h3>Overview</h3>
                       <br/>
                       <p>${selMovie.overview}</p>
                     </div>
+
+                    <div class="mov-details">
+                      <table class="mov-det-votes">
+                        <tr>
+                          <th><h3>Vote Average</h3></th>
+                          <th><h3>Vote Count</h3></th>
+                        </tr>
+                        <tr>
+                          <td><p><b>${selMovie.vote_average}</b> / 10</p></td>
+                          <td><p><b>${selMovie.vote_count}</b> votes</p></td>
+                        </tr>
+                      </table>
+                    </div>
+
                   </div>
                 </div>
 

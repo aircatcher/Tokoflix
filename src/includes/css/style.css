@@ -8,6 +8,12 @@
   height: 320px
 }
 
+.mov-det-votes tr th,
+.mov-det-votes tr td
+{
+  padding: 7px 20px 0 0
+}
+
 .movie-preview-container
 {
   margin-top: 40px;

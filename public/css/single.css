@@ -47,14 +47,14 @@ font-family: 'Roboto Condensed', sans-serif;
     border: none;
     height: 376px;
 }
-.share h5{
+.mov-details h5{
        font-size: 1.3em;
     color: #181818;
     margin: 0 0 0em 0;
     font-weight: 400;
     text-transform: uppercase;
 }
-.share ul{
+.mov-details ul{
 	margin: 2em 0 0 0;
     padding: 0;
     list-style: none;
@@ -80,7 +80,7 @@ font-family: 'Roboto Condensed', sans-serif;
 .news-twitter a{
 	margin:1em 0 0 0 !important;
 }
-.share {
+.mov-details {
     padding: 1em 0 0 1em;
 }
 /*-- shows --*/
@@ -552,7 +552,7 @@ width:100%;
 		font-weight: 400;
 		margin: 0 0 12px 0;
 	}
-	.share {
+	.mov-details {
 		padding: 0em 0 0 0em;
 	}
 }
