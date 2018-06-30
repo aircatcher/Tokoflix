@@ -52,9 +52,10 @@ class Latest extends React.Component
 
   performSearch(keyword)
   {
-    if(keyword !== "")
+    var api_key = '1c67c0067c6a82a74b92665f1e488325';
+
+    if(keyword !== '')
     {
-      var api_key = '1c67c0067c6a82a74b92665f1e488325';
       var page_num = 1;
       const tmdbURL = 'https://api.themoviedb.org/3/search/movie?query=' + keyword + '&api_key=' + api_key + '&page=' + page_num;
       $.ajax({
@@ -89,22 +90,74 @@ class Latest extends React.Component
                 movieContents.push(mRow);
               }
             }
+
+            var pageHeading = document.getElementById('page-heading-text').innerHTML = 'Latest Movies';
           }
           else
           {
             movieContents.push(
               <div className="col-md">
-                <h3>Nothing found</h3>
-                <br/>
                 <p>Based on your search, we found none.</p>
                 <p>Make sure to check your search again or subscribe for more upcoming movies.</p>
               </div>
             );
+
+            var pageHeading = document.getElementById('page-heading-text').innerHTML = 'Nothing Found';
           }
 
           this.setState(
           {
-            contents: movieContents
+            contents: movieContents,
+            heading: pageHeading
+          });
+        },
+        error: (xhr, status, err) =>
+        {
+          // console.log('Failed to fetch movie data');
+        }
+      })
+    }
+    else
+    {
+      var page_num = 1;
+      const tmdbURL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api_key + '&page=' + page_num;
+      $.ajax({
+        url: tmdbURL,
+        success: (npResults) =>
+        {
+          // console.log(npResults);
+          const nowPlaying = npResults.results;
+          // console.log(nowPlaying);
+          
+          var movieContents = [];
+
+          var qs = document.getElementById('latest-flix-list').innerHTML;
+          
+          for(var i = 0; i < nowPlaying.length; i++)
+          {
+            if(i === 0)
+            {
+              qs += '<div class="col-md-2">';
+            }
+            else if(i%6 !== 0)
+            {
+              const mRow = <MovieRow key={nowPlaying[i].id} movie={nowPlaying[i]} />;
+              movieContents.push(mRow);
+            }
+            else
+            {
+              const mRow = <MovieRow key={nowPlaying[i].id} movie={nowPlaying[i]} />;
+              qs += '</div><div class="col-md-2">' + mRow;
+              movieContents.push(mRow);
+            }
+          }
+
+          var pageHeading = document.getElementById('page-heading-text').innerHTML = 'Now Playing';
+
+          this.setState(
+          {
+            contents: movieContents,
+            heading: pageHeading
           });
         },
         error: (xhr, status, err) =>
@@ -132,7 +185,6 @@ class Latest extends React.Component
   {
     return (
       <div
-        // style={{ overflowY: 'auto' }}
         onScroll={this.handleScroll}
         ref={scroller => this.scroller = scroller}
       >
@@ -168,7 +220,21 @@ class Latest extends React.Component
 
         <div className="general">
           <div className="container">
-            <h4 className="latest-text w3_latest_text" style={{ marginLeft: '0' }}>Latest Movies</h4>
+            <div className="container-fluid">
+              <div class="col-md-6">
+                <h4 class="latest-text w3_latest_text" id="page-heading-text" style={{marginLeft: 0}}>{ this.state.heading }</h4>
+              </div>
+              <div class="col-md-6">
+                <ul class="pagination pull-right" style={{margin: '10px 0'}}>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                </ul>
+              </div>
+              </div>
+            
             <div className="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
               {/* <ul id="myTab" className="nav nav-tabs" role="tablist">
                 <li role="presentation" className="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Featured</a></li>
@@ -178,14 +244,7 @@ class Latest extends React.Component
               </ul> */}
               <div id="myTabContent" className="tab-content">
                 <div role="tabpanel" className="tab-pane fade active in" id="latest-flix-list" aria-labelledby="home-tab">
-
-                    {
-                      this.state.contents === undefined ?
-                        'Please search by title above ...'
-                      :
-                        this.state.contents
-                    }
-
+                  { this.state.contents }
                 </div>
 
                 <div className="clearfix"> </div>

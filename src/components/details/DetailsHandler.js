@@ -36,7 +36,11 @@ class DetailsHandler extends React.Component
       success: (selMovie) =>
       {
         // console.log('Successfuly fetched the Movie data');
-        console.log(selMovie);
+        // console.log(selMovie);
+
+        var rootimgURL = 'https://image.tmdb.org/t/p/w500';
+        var backdrop = rootimgURL + selMovie.backdrop_path;
+        if(selMovie.backdrop_path === null) backdrop = '/images/image-not-available.png';
         
         let md = '';
         md += `
@@ -95,7 +99,7 @@ class DetailsHandler extends React.Component
                     <div role="tabpanel" class="tab-pane fade in active" id="profile">...</div>
                     <div role="tabpanel" class="tab-pane fade in" id="buzz">bbb</div>
                     <div role="tabpanel" class="tab-pane fade in" id="gallery">
-                      <img src=${'https://image.tmdb.org/t/p/w500' + selMovie.backdrop_path} alt=${selMovie.title} class="img-responsive movie-preview" style="width:60%" />
+                      <img src=${backdrop} alt=${selMovie.title} class="img-responsive movie-preview" style="width:60%" />
                     </div>
                   </div>
                 </div>
