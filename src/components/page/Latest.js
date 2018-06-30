@@ -220,7 +220,7 @@ class Latest extends React.Component
 
         <div className="general">
           <div className="container">
-            <div className="container-fluid">
+            <div className="container-fluid" style={{ marginBottom: 15 }}>
               <div class="col-md-6">
                 <h4 class="latest-text w3_latest_text" id="page-heading-text" style={{marginLeft: -15}}>{ this.state.heading }</h4>
               </div>

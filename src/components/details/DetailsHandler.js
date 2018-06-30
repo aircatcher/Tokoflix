@@ -97,7 +97,11 @@ class DetailsHandler extends React.Component
                           <th><h3>Price</h3></th>
                         </tr>
                         <tr>
-                          <td><button>Purchase</button></td>
+                          <td>
+                            <button class="ui orange fade button" role="button" style="opacity:1">
+                              Purchase
+                            </button>
+                          </td>
                         </tr>
                       </table>
                     </div>
