@@ -1,0 +1,30 @@
+.w3_search input[type="text"]
+{
+  border-radius: 25px
+}
+
+#movie-row-container
+{
+  height: 320px
+}
+
+@media (max-width: 414px)
+{
+  .agileits_w3layouts_mid_1_home
+  {
+    width: 70%
+  }
+  #movie-row-container
+  {
+    height: 320px;
+    margin: 0 0 50px 20vw
+  }  
+}
+
+.w3l-movie-text h6
+{
+  white-space: nowrap; 
+  width: 100%; 
+  overflow: hidden;
+  text-overflow: ellipsis
+}
