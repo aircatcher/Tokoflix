@@ -64,11 +64,11 @@ class Latest extends React.Component
 
           let pagination = '';
           pagination += `<ul class="pagination pull-right" style="margin:10px 0">`;
-          for(var i = 1; i < tp; i++)
+          for(var i = 1; i < tp+1; i++)
           {
             if(i <= 9)
             {
-              if(page_num_np === i+1)
+              if(page_num_np === i)
                 pagination += `<li class="active"><a href="?page=${i}">${i}</a></li>`;
               else
                 pagination += `<li><a href="?page=${i}">${i}</a></li>`;
@@ -79,7 +79,8 @@ class Latest extends React.Component
               break;
             }
           }
-          pagination += `</ul>`;
+          pagination += `</ul><br/><br/><br/>
+          <p class="pull-right">Total Pages: ${tp}</p>`;
           document.getElementById('paginator').innerHTML = pagination;
           
           /**
@@ -156,14 +157,16 @@ class Latest extends React.Component
           let pagination = '';
           pagination += `<ul class="pagination pull-right" style="margin:10px 0">`;
           var pg_active_state = false;
-          for(var i = 0; i < tp; i++)
+          for(var i = 1; i < tp+1; i++)
           {
-            if(page_num_np === i+1)
-              pagination += `<li class="active"><a href="#">${i+1}</a></li>`;
+            if(page_num_np === i)
+              pagination += `<li class="active"><a href="#">${i}</a></li>`;
             else
-              pagination += `<li><a href="#">${i+1}</a></li>`;
+              pagination += `<li><a href="#">${i}</a></li>`;
           }
-          pagination += `</ul>`;
+          pagination +=
+            `</ul><br/><br/><br/>
+            <p class="pull-right">Total Pages: ${tp}</p>`;
           document.getElementById('paginator').innerHTML = pagination;
 
           /**
@@ -285,7 +288,7 @@ class Latest extends React.Component
           <div className="container">
             <div className="container-fluid" style={{ marginBottom: 15 }}>
               <div className="col-md-6">
-                <h4 className="latest-text w3_latest_text" id="page-heading-text" style={{marginLeft: -15}}>{ this.state.heading }</h4>
+                <h4 className="latest-text w3_latest_text pull-left" id="page-heading-text" style={{marginLeft: -15}}>{ this.state.heading }</h4>
               </div>
               <div className="col-md-6" id="paginator">
               </div>
