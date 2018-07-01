@@ -40,11 +40,12 @@ class Latest extends React.Component
   performSearch(keyword)
   {
     var api_key = '1c67c0067c6a82a74b92665f1e488325';
+    var region = 'ID';
 
     if(keyword !== '')
     {
       var page_num = 1;
-      const tmdbURL = 'https://api.themoviedb.org/3/search/movie?query=' + keyword + '&api_key=' + api_key + '&page=' + page_num;
+      const tmdbURL = 'https://api.themoviedb.org/3/search/movie?query=' + keyword + '&api_key=' + api_key + '&region=' + region + '&page=' + page_num;
       $.ajax({
         url: tmdbURL,
         success: (searchResults) =>
@@ -107,7 +108,6 @@ class Latest extends React.Component
     else
     {
       var page_num = 1;
-      var region = 'ID';
       const tmdbURL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api_key + '&region=' + region + '&page=' + page_num;
       $.ajax({
         url: tmdbURL,
