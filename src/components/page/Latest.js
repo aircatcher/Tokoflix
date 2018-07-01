@@ -8,6 +8,25 @@ import Popup from './Popup';
 
 import '../../includes/css/style.css';
 
+var blc = 0;
+if(localStorage.getItem('userBalance') === null)
+{
+  blc = 100000;
+  localStorage.setItem('userBalance', blc);
+}
+else
+{
+  blc = localStorage.getItem('userBalance');
+}
+var price = 0;
+
+export const priceFormat = (x) =>
+{
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, "."/* Change this part for comma, dot, or any character you want on here */);
+  return parts.join(".");
+}
+
 class Latest extends React.Component
 {
   constructor(props)
@@ -59,7 +78,7 @@ class Latest extends React.Component
               }
             }
 
-            var pageHeading = document.getElementById('page-heading-text').innerHTML = 'Latest Movies';
+            var pageHeading = document.getElementById('page-heading-text').innerHTML = 'Movies Search';
           }
           else
           {
@@ -135,10 +154,16 @@ class Latest extends React.Component
       })
     }
   }
+  
+  balance()
+  {
+    var formattedBlc = priceFormat(blc);
+    return formattedBlc;
+  }
 
   logout()
   {
-    localStorage.removeItem('Authorization');
+    localStorage.clear();
     window.location.reload();
   }
 
@@ -180,14 +205,19 @@ class Latest extends React.Component
               {/* </form> */}
             </div>
             <div className="w3l_sign_in_register">
-              <ul>
+              <ul className="pull-right">
                 {
                   localStorage.getItem('Authorization') === null ?
                     <li><a href="#" data-toggle="modal" data-target="#authModal">Login</a></li>
                   :
                   ([
-                    <li><i className="fa fa-money" aria-hidden="true"></i>Rp 100.000,00</li>,
-                    <li><a onClick={this.logout} style={{cursor: 'pointer'}}>Logout</a></li>
+                    <li key="0">
+                      <i className="fa fa-money" aria-hidden="true"></i>
+                      Rp {this.balance()}
+                    </li>,
+                    <li key="1">
+                      <a onClick={this.logout} style={{cursor: 'pointer'}}>Logout</a>
+                    </li>
                   ])
                 }
               </ul>

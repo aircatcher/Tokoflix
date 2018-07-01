@@ -36,28 +36,23 @@ export default class Popup extends React.Component
     // return fetch(`https://api.themoviedb.org/3/authentication/token/new?api_key=` + api_key)
     // .then(res => { return localStorage.setItem('Authorization', 'Bearer ' + res.request_token) })
     // .then(data => console.log(data));
-    const authRequest = 'https://api.themoviedb.org/3/authentication/token/new?api_key=' + api_key;
+    const authRequest = 'https://api.themoviedb.org/3/authentication/guest_session/new?api_key=' + api_key;
 
     $.ajax({
       url: authRequest,
       success: (tokenRes) =>
       {
-        // console.log('Successfuly fetched the Movie data');
-        localStorage.setItem('Authorization', tokenRes.request_token);
-
-        window.open(
-          'https://www.themoviedb.org/authenticate/' + localStorage.getItem('Authorization')
-        );
+        // console.log('Successfuly fetched the data');
+        localStorage.setItem('Authorization', tokenRes.guest_session_id);
+        window.location.reload();
       },
       error: (xhr, status, err) =>
       {
-        // console.log('Failed to fetch movie data');
+        // console.log('Failed to fetch data');
       }
     });
 
-    
-
-    document.getElementById('please-refresh').innerHTML = 'Please refresh this window';
+    // document.getElementById('please-refresh').innerHTML = 'Please refresh this window';
   }
 
   handleChange(field, e)
@@ -101,7 +96,7 @@ export default class Popup extends React.Component
 
                       <Form onSubmit={this.handleFormSubmit}>
                         <Form.Field>
-                          <h3><label>Login to your account</label></h3>
+                          <h3><label>Login as a Guest</label></h3>
                           <Input type="text" name="username" placeholder="Username" disabled />
                           <Input type="password" name="password" placeholder="Password" disabled />
                           <input type="submit" value="Login"/>

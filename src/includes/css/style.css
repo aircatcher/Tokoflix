@@ -22,6 +22,17 @@
   color: white !important
 }
 
+#some-extras
+{
+  margin-top: 40px
+}
+
+.purchase-btn-container
+{
+  position: absolute;
+  margin: -20px 0 0 33px
+}
+
 .movie-preview-container
 {
   margin-top: 40px;
