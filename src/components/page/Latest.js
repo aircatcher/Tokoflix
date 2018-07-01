@@ -13,40 +13,8 @@ class Latest extends React.Component
   constructor(props)
   {
     super(props);
-
     this.onSearchHandler = this.onSearchHandler.bind(this)
-
-    // const movies = [
-    //   {
-    //     id: 0,
-    //     title: "Avengers",
-    //     overview: "overview oasdkokok kaowodoakwd",
-    //     poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
-    //   },
-    //   {
-    //     id: 1,
-    //     title: "Avengers 2",
-    //     overview: "overview 2 oasdkokok 2 kaowodoakwd 2",
-    //     poster_src: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
-    //   },
-    // ];
-
-    // var movieRows = [];
-    // movies.forEach((movie) =>
-    // {
-    //   const single = <MovieRow movie={movie} />
-    //   movieRows.push(single);
-    //   // movieRows.push([movie.id, movie.title, movie.overview])
-    // });
-
-    // // console.log(movieRows[0][1]);
-
-    // this.state = {
-    //   rows: movieRows
-    // };
-
     this.state = {};
-
     this.performSearch("");
   }
 
@@ -76,7 +44,7 @@ class Latest extends React.Component
             {
               if(i === 0)
               {
-                qs = '<div class="col-md-2">';
+                qs = '<div className="col-md-2">';
               }
               else if(i%6 !== 0)
               {
@@ -86,7 +54,7 @@ class Latest extends React.Component
               else
               {
                 const mRow = <MovieRow key={results[i].id} movie={results[i]} />;
-                qs += '</div><div class="col-md-2">' + mRow;
+                qs += '</div><div className="col-md-2">' + mRow;
                 movieContents.push(mRow);
               }
             }
@@ -137,7 +105,7 @@ class Latest extends React.Component
           {
             if(i === 0)
             {
-              qs += '<div class="col-md-2">';
+              qs += '<div className="col-md-2">';
             }
             else if(i%6 !== 0)
             {
@@ -147,7 +115,7 @@ class Latest extends React.Component
             else
             {
               const mRow = <MovieRow key={nowPlaying[i].id} movie={nowPlaying[i]} />;
-              qs += '</div><div class="col-md-2">' + mRow;
+              qs += '</div><div className="col-md-2">' + mRow;
               movieContents.push(mRow);
             }
           }
@@ -166,6 +134,12 @@ class Latest extends React.Component
         }
       })
     }
+  }
+
+  logout()
+  {
+    localStorage.removeItem('Authorization');
+    window.location.reload();
   }
 
   onSearchHandler(e)
@@ -191,7 +165,7 @@ class Latest extends React.Component
         <div className="header">
           <div className="container">
             <div className="layouts_logo">
-              <a href="index.html"><h1>Tokoflix<span>Movies</span></h1></a>
+              <a href="/"><h1>Tokoflix<span>Movies</span></h1></a>
             </div>
             <div className="w3_search">
               {/* <form action={null} method="post"> */}
@@ -205,29 +179,37 @@ class Latest extends React.Component
                 {/* <input type="submit" value="Go"/> */}
               {/* </form> */}
             </div>
-            {/* <div className="w3l_sign_in_register">
+            <div className="w3l_sign_in_register">
               <ul>
-                <li><i className="fa fa-phone" aria-hidden="true"></i> (+000) 123 345 653</li>
-                <li><a href={null} data-toggle="modal" data-target="{null}myModal">Login</a></li>
+                {
+                  localStorage.getItem('Authorization') === null ?
+                    <li><a href="#" data-toggle="modal" data-target="#authModal">Login</a></li>
+                  :
+                  ([
+                    <li><i className="fa fa-money" aria-hidden="true"></i>Rp 100.000,00</li>,
+                    <li><a onClick={this.logout} style={{cursor: 'pointer'}}>Logout</a></li>
+                  ])
+                }
               </ul>
-            </div> */}
+            </div>
             <div className="clearfix"> </div>
           </div>
         </div>
 
         <Popup />
+
         <Navbar />
 
         <div className="general">
           <div className="container">
             <div className="container-fluid" style={{ marginBottom: 15 }}>
-              <div class="col-md-6">
-                <h4 class="latest-text w3_latest_text" id="page-heading-text" style={{marginLeft: -15}}>{ this.state.heading }</h4>
+              <div className="col-md-6">
+                <h4 className="latest-text w3_latest_text" id="page-heading-text" style={{marginLeft: -15}}>{ this.state.heading }</h4>
               </div>
-              <div class="col-md-6">
-                <ul class="pagination pull-right" style={{margin: '10px 0'}}>
+              <div className="col-md-6">
+                <ul className="pagination pull-right" style={{margin: '10px 0'}}>
                   <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
+                  <li className="active"><a href="#">2</a></li>
                   <li><a href="#">3</a></li>
                   <li><a href="#">4</a></li>
                   <li><a href="#">5</a></li>

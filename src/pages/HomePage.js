@@ -4,7 +4,6 @@ import React from 'react';
 // import Header from '../components/page/Header';
 import Footer from '../components/page/Footer';
 
-// import Popup from '../components/page/Popup';
 // import CarouselBanner from '../components/page/Banner';
 // import BannerBottom from '../components/page/BannerBottom';
 import SocialIcons from '../components/page/SocialIcons';
