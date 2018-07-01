@@ -107,7 +107,8 @@ class Latest extends React.Component
     else
     {
       var page_num = 1;
-      const tmdbURL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api_key + '&page=' + page_num;
+      var region = 'ID';
+      const tmdbURL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api_key + '&region=' + region + '&page=' + page_num;
       $.ajax({
         url: tmdbURL,
         success: (npResults) =>
