@@ -34,7 +34,7 @@ class MovieRow extends React.Component
   render()
   {
     const { movie } = this.props;
-    rating = movie.vote_average/2;
+    rating = movie.vote_average;
 
     return (
       <div className="col-md-2" id="movie-row-container">
@@ -57,10 +57,10 @@ class MovieRow extends React.Component
             <p>2016</p>
             <div className="block-stars">
               <ul className="w3l-ratings">
-                { (rating >= 0     && rating <= 0.5) && <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li> }
-                { (rating >= 0.51  && rating <= 1  ) && <li><i className="fa fa-star" aria-hidden="true"></i></li> }
+                { (rating >= 0   && rating <= 1) && <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li> }
+                { (rating >= 1.1 && rating <= 2) && <li><i className="fa fa-star" aria-hidden="true"></i></li> }
                 {
-                  (rating >= 1.01  && rating <= 1.5) &&
+                  (rating >= 2.1 && rating <= 3) &&
                   ([
                     <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
                     <li key='2'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
@@ -70,7 +70,7 @@ class MovieRow extends React.Component
                   ])
                 }
                 {
-                  (rating >= 1.51  && rating <= 2  ) &&
+                  (rating >= 3.1 && rating <= 4) &&
                   ([
                     <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
                     <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
@@ -80,7 +80,7 @@ class MovieRow extends React.Component
                   ])
                 }
                 {
-                  (rating >= 2.01  && rating <= 2.5) &&
+                  (rating >= 4.1 && rating <= 5) &&
                   ([
                     <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
                     <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
@@ -90,7 +90,7 @@ class MovieRow extends React.Component
                   ])
                 }
                 {
-                  (rating >= 2.51  && rating <= 3  ) &&
+                  (rating >= 5.1 && rating <= 6) &&
                   ([
                     <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
                     <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
@@ -100,7 +100,7 @@ class MovieRow extends React.Component
                   ])
                 }
                 {
-                  (rating >= 3.01  && rating <= 3.5) &&
+                  (rating >= 6.1 && rating <= 7) &&
                   ([
                     <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
                     <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
@@ -111,7 +111,7 @@ class MovieRow extends React.Component
                   ])
                 }
                 {
-                  (rating >= 3.51  && rating <= 4  ) &&
+                  (rating >= 7.1 && rating <= 8) &&
                   ([
                     <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
                     <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
@@ -121,7 +121,7 @@ class MovieRow extends React.Component
                   ])
                 }
                 {
-                  (rating >= 4.01  && rating <= 4.5) &&
+                  (rating >= 8.1 && rating <= 9) &&
                   ([
                     <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
                     <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
@@ -131,7 +131,7 @@ class MovieRow extends React.Component
                   ])
                 }
                 {
-                  (rating >= 4.51  && rating <= 5  ) &&
+                  (rating >= 9.1 && rating <= 10) &&
                   ([
                     <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
                     <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,

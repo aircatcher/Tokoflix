@@ -320,7 +320,7 @@ class DetailsHandler extends React.Component
         <div className="header">
           <div className="container">
             <div className="layouts_logo">
-              <a href="index.html"><h1>Tokoflix<span>Movies</span></h1></a>
+              <a href="/"><h1>Tokoflix<span>Movies</span></h1></a>
             </div>
             <div className="w3_search">
               {/* <form action={null} method="post"> */}

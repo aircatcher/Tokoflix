@@ -8,6 +8,9 @@ import Popup from './Popup';
 
 import '../../includes/css/style.css';
 
+var tp = 0;
+var page_num_search = 1;
+var page_num_np = 1;
 var blc = 0;
 if(localStorage.getItem('userBalance') === null)
 {
@@ -44,16 +47,44 @@ class Latest extends React.Component
 
     if(keyword !== '')
     {
-      var page_num = 1;
-      const tmdbURL = 'https://api.themoviedb.org/3/search/movie?query=' + keyword + '&api_key=' + api_key + '&region=' + region + '&page=' + page_num;
+      page_num_search = 1;
+      const tmdbURL = 'https://api.themoviedb.org/3/search/movie?query=' + keyword + '&api_key=' + api_key + '&region=' + region + '&page=' + page_num_search;
       $.ajax({
         url: tmdbURL,
         success: (searchResults) =>
         {
           // console.log('Successfuly fetched the Movie data');
           const results = searchResults.results;
+
+          /**
+           * Pagination
+           */
+          tp = searchResults.total_pages;
+          localStorage.setItem('Total Pages', tp);
+
+          let pagination = '';
+          pagination += `<ul class="pagination pull-right" style="margin:10px 0">`;
+          for(var i = 1; i < tp; i++)
+          {
+            if(i <= 9)
+            {
+              if(page_num_np === i+1)
+                pagination += `<li class="active"><a href="?page=${i}">${i}</a></li>`;
+              else
+                pagination += `<li><a href="?page=${i}">${i}</a></li>`;
+            }
+            else
+            {
+              pagination += `<li><a href="?page=${i}">►</a></li>`;
+              break;
+            }
+          }
+          pagination += `</ul>`;
+          document.getElementById('paginator').innerHTML = pagination;
           
-          // console.log(results[0]);
+          /**
+           * Movie Listings
+           */
           var movieContents = [];
 
           if(results.length !== 0)
@@ -107,27 +138,46 @@ class Latest extends React.Component
     }
     else
     {
-      var page_num = 1;
-      const tmdbURL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api_key + '&region=' + region + '&page=' + page_num;
+      page_num_np = 1;
+      const tmdbURL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api_key + '&region=' + region + '&page=' + page_num_np;
       $.ajax({
         url: tmdbURL,
         success: (npResults) =>
         {
           // console.log(npResults);
           const nowPlaying = npResults.results;
-          // console.log(nowPlaying);
-          
-          var movieContents = [];
 
-          var qs = document.getElementById('latest-flix-list').innerHTML;
-          
+          /**
+           * Pagination
+           */
+          tp = npResults.total_pages;
+          localStorage.setItem('Total Pages', tp);
+
+          let pagination = '';
+          pagination += `<ul class="pagination pull-right" style="margin:10px 0">`;
+          var pg_active_state = false;
+          for(var i = 0; i < tp; i++)
+          {
+            if(page_num_np === i+1)
+              pagination += `<li class="active"><a href="#">${i+1}</a></li>`;
+            else
+              pagination += `<li><a href="#">${i+1}</a></li>`;
+          }
+          pagination += `</ul>`;
+          document.getElementById('paginator').innerHTML = pagination;
+
+          /**
+           * Movie Listings
+           */
+          var movieContents = [];
+          var qs = '';
           for(var i = 0; i < nowPlaying.length; i++)
           {
-            if(i === 0)
-            {
-              qs += '<div className="col-md-2">';
-            }
-            else if(i%6 !== 0)
+            // if(i === 0)
+            // {
+            //   qs += '<div className="col-md-2">';
+            // }
+            /*else*/ if(i%6 !== 0)
             {
               const mRow = <MovieRow key={nowPlaying[i].id} movie={nowPlaying[i]} />;
               movieContents.push(mRow);
@@ -135,7 +185,7 @@ class Latest extends React.Component
             else
             {
               const mRow = <MovieRow key={nowPlaying[i].id} movie={nowPlaying[i]} />;
-              qs += '</div><div className="col-md-2">' + mRow;
+              // qs += '</div><div className="col-md-2">' + mRow;
               movieContents.push(mRow);
             }
           }
@@ -237,16 +287,9 @@ class Latest extends React.Component
               <div className="col-md-6">
                 <h4 className="latest-text w3_latest_text" id="page-heading-text" style={{marginLeft: -15}}>{ this.state.heading }</h4>
               </div>
-              <div className="col-md-6">
-                <ul className="pagination pull-right" style={{margin: '10px 0'}}>
-                  <li><a href="#">1</a></li>
-                  <li className="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                </ul>
+              <div className="col-md-6" id="paginator">
               </div>
-              </div>
+            </div>
             
             <div className="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
               {/* <ul id="myTab" className="nav nav-tabs" role="tablist">
