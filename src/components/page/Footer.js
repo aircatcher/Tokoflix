@@ -25,6 +25,7 @@ class Footer extends React.Component
             <div className="clearfix"> </div>
           </div>
           <div className="col-md-5 w3ls_footer_grid1_left">
+            <p>&copy; 2018 <a href="https://github.com/aircatcher">@aircatcher</a>. All rights reserved</p>
             <p style={{ display: 'none' }}>&copy; 2016 One Movies. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
           </div>
           <div className="col-md-7 w3ls_footer_grid1_right">
