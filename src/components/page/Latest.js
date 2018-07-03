@@ -6,6 +6,8 @@ import MovieRow from '../MovieRow';
 import Navbar from './Navbar';
 import Popup from './Popup';
 
+import InfiniteScroll from 'infinite-scroll';
+
 import '../../includes/css/style.css';
 
 var tp = 0;
@@ -147,6 +149,17 @@ class Latest extends React.Component
         {
           // console.log(npResults);
           const nowPlaying = npResults.results;
+
+          /**
+           * Infinite Scroll
+           */
+          var elem = document.querySelector('.tab-content');
+          var infScroll = new InfiniteScroll( elem,
+          {
+            path: '.pagination__next',
+            append: '.post',
+            history: false,
+          });
 
           /**
            * Pagination
