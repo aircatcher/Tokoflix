@@ -8,6 +8,15 @@
   height: 320px
 }
 
+.hvr-shutter-out-horizontal:before
+{
+  content: "\21F2";
+  font-size: 2em;
+  padding: 67% 43%;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.4)
+}
+
 .img-responsive
 {
   min-height: 240px !important;
