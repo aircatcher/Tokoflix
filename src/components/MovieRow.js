@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  Image,
+  Dimmer,
+  Loader,
+  Segment
+} from 'semantic-ui-react'
 
 var rating = 0;
 
@@ -22,13 +28,38 @@ class MovieRow extends React.Component
     var movieID = movie.id;
     var title = movie.title;
 
+    /**
+     * Manipulate the title,
+     * 
+     * If these characters exist => : (colon) and " " space
+     * 
+     * Then replace both with ...
+     * "-" (hyphen or negative)
+     * and
+     * "" (no char)
+     * respectively 
+     */
     title = title.replace(/ /g, "-");
     title = title.replace(/:/g, '');
 
+    /**
+     * Replace the address URL with the manipulated title
+     */
     var genURL = '/' + movieID + '/' + title;
     localStorage.setItem('selMovieID', movieID);
     localStorage.setItem('movieDetailsURL', genURL);
     window.location.href = genURL;
+  }
+
+  LoadingDimmer = () =>
+  {
+    <Segment>
+      <Dimmer active>
+        <Loader />
+      </Dimmer>
+  
+      <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+    </Segment>
   }
 
   render()
@@ -37,19 +68,25 @@ class MovieRow extends React.Component
     rating = movie.vote_average;
 
     return (
-      <div className="col-md-2" id="movie-row-container">
-      
-        <a onClick={this.viewDetails} className="hvr-shutter-out-horizontal" style={{cursor: 'pointer'}}>
-          {
-            movie.poster_path != null ?
-              <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} title={movie.title} className="img-responsive" alt=" " />
-            :
-              <img src='images/no-poster.png' title={movie.title} className="img-responsive" alt=" " />
-          }
-          <div className="w3l-action-icon"><i className="fa fa-play-circle" aria-hidden="true"></i></div>
-        </a>
 
-        <div className="mid-1 agileits_w3layouts_mid_1_home">
+      <div className="col-md-2" id="movie-row-container">
+        <table>
+          <tr>
+            <td>
+              <a onClick={this.viewDetails} className="hvr-shutter-out-horizontal" style={{cursor: 'pointer'}}>
+                {
+                  movie.poster_path != null ?
+                    <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} title={movie.title} className="img-responsive" alt=" " />
+                  :
+                    <img src='images/no-poster.png' title={movie.title} className="img-responsive" alt=" " />
+                }
+                <div className="w3l-action-icon"><i className="fa fa-play-circle" aria-hidden="true"></i></div>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <div className="mid-1 agileits_w3layouts_mid_1_home">
           <div className="w3l-movie-text">
             <h6><a onClick={this.viewDetails} style={{cursor: 'pointer'}}>{movie.title}</a></h6>
           </div>
@@ -145,6 +182,9 @@ class MovieRow extends React.Component
             <div className="clearfix"></div>
           </div>
         </div>
+            </td>
+          </tr>
+        </table>
 
         {/* <div className="ribben">
           <p>NEW</p>

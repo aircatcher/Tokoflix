@@ -8,6 +8,13 @@
   height: 320px
 }
 
+.img-responsive
+{
+  min-height: 240px;
+  max-height: 240px !important;
+  max-width: 160px !important
+}
+
 .mov-det-votes tr th,
 .mov-det-votes tr td
 {
@@ -46,6 +53,15 @@
   margin: 5px 0 0 0
 }
 
+.agileits_w3layouts_mid_1_home { width: 160px }
+.w3l-movie-text h6
+{
+  white-space: nowrap; 
+  width: 100%; 
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
 @media (max-width: 414px)
 {
   .agileits_w3layouts_mid_1_home
@@ -57,12 +73,4 @@
     height: 320px;
     margin: 0 0 50px 20vw
   }  
-}
-
-.w3l-movie-text h6
-{
-  white-space: nowrap; 
-  width: 100%; 
-  overflow: hidden;
-  text-overflow: ellipsis
 }

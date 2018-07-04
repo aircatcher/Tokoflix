@@ -6,7 +6,7 @@ import MovieRow from '../MovieRow';
 import Navbar from './Navbar';
 import Popup from './Popup';
 
-import InfiniteScroll from 'infinite-scroll';
+// import InfiniteScroll from 'infinite-scroll';
 
 import '../../includes/css/style.css';
 
@@ -23,7 +23,6 @@ else
 {
   blc = localStorage.getItem('userBalance');
 }
-var price = 0;
 
 export const priceFormat = (x) =>
 {
@@ -37,7 +36,7 @@ class Latest extends React.Component
   constructor(props)
   {
     super(props);
-    this.onSearchHandler = this.onSearchHandler.bind(this)
+    this.onSearchHandler = this.onSearchHandler.bind(this);
     this.state = {};
     this.performSearch("");
   }
@@ -46,11 +45,11 @@ class Latest extends React.Component
   {
     var api_key = '1c67c0067c6a82a74b92665f1e488325';
     var region = 'ID';
+    var qs = '';
 
     if(keyword !== '')
     {
-      page_num_search = 1;
-      const tmdbURL = 'https://api.themoviedb.org/3/search/movie?query=' + keyword + '&api_key=' + api_key + '&region=' + region + '&page=' + page_num_search;
+      const tmdbURL = 'https://api.themoviedb.org/3/search/movie?query=' + keyword + '&api_key=' + api_key + '&region=' + region;
       $.ajax({
         url: tmdbURL,
         success: (searchResults) =>
@@ -92,9 +91,9 @@ class Latest extends React.Component
 
           if(results.length !== 0)
           {
-            var qs = document.getElementById('latest-flix-list').innerHTML;
+            // var qs = ''; //document.getElementById('latest-flix-list').innerHTML;
             
-            for(var i = 0; i < results.length; i++)
+            for(i = 0; i < results.length; i++)
             {
               if(i === 0)
               {
@@ -118,13 +117,13 @@ class Latest extends React.Component
           else
           {
             movieContents.push(
-              <div className="col-md">
+              <div className="col-md" key={i}>
                 <p>Based on your search, we found none.</p>
                 <p>Make sure to check your search again or subscribe for more upcoming movies.</p>
               </div>
             );
 
-            var pageHeading = document.getElementById('page-heading-text').innerHTML = 'Nothing Found';
+            pageHeading = document.getElementById('page-heading-text').innerHTML = 'Nothing Found';
           }
 
           this.setState(
@@ -153,13 +152,15 @@ class Latest extends React.Component
           /**
            * Infinite Scroll
            */
-          var elem = document.querySelector('.tab-content');
-          var infScroll = new InfiniteScroll( elem,
-          {
-            path: '.pagination__next',
-            append: '.post',
-            history: false,
-          });
+          // var elem = document.querySelector('.tab-content');
+          // var infScroll = new InfiniteScroll( elem,
+          // {
+          //   path: '.pagination__next',
+          //   append: '<p>Hello</p>',
+          //   history: false,
+          // });
+
+          // infScroll;
 
           /**
            * Pagination
@@ -169,13 +170,13 @@ class Latest extends React.Component
 
           let pagination = '';
           pagination += `<ul class="pagination pull-right" style="margin:10px 0">`;
-          var pg_active_state = false;
+          // var pg_active_state = false;
           for(var i = 1; i < tp+1; i++)
           {
             if(page_num_np === i)
               pagination += `<li class="active"><a href="#">${i}</a></li>`;
             else
-              pagination += `<li><a href="#">${i}</a></li>`;
+              pagination += `<li><a href="?page=${i}">${i}</a></li>`;
           }
           pagination +=
             `</ul><br/><br/><br/>
@@ -186,8 +187,7 @@ class Latest extends React.Component
            * Movie Listings
            */
           var movieContents = [];
-          var qs = '';
-          for(var i = 0; i < nowPlaying.length; i++)
+          for(i = 0; i < nowPlaying.length; i++)
           {
             // if(i === 0)
             // {
@@ -236,15 +236,14 @@ class Latest extends React.Component
 
   onSearchHandler(e)
   {
-    // console.log(e.target.value);
     const searchTerm = e.target.value;
     this.performSearch(searchTerm);
   }
 
   handleScroll = () =>
   {
-    if(this.scroller)
-      console.log(this.scroller.scrollTop);
+    if(this.scroller && this.scroller.scrollTop < 100)
+      console.log(this.scroller.scrollTop)
   }
 
   render()
