@@ -94,8 +94,26 @@ class MovieRow extends React.Component
             <p>2016</p>
             <div className="block-stars">
               <ul className="w3l-ratings">
-                { (rating >= 0   && rating <= 1) && <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li> }
-                { (rating >= 1.1 && rating <= 2) && <li><i className="fa fa-star" aria-hidden="true"></i></li> }
+                {
+                  (rating >= 0   && rating <= 1) && 
+                  ([
+                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
+                  ])
+                }
+                {
+                  (rating >= 1.1 && rating <= 2) &&
+                  ([
+                    <li><i className="fa fa-star" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
+                  ])
+                }
                 {
                   (rating >= 2.1 && rating <= 3) &&
                   ([
