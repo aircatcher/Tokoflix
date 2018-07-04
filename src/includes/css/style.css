@@ -10,8 +10,8 @@
 
 .img-responsive
 {
-  min-height: 240px;
-  max-height: 240px;
+  min-height: 240px !important;
+  max-height: 240px !;
   max-width: 160px
 }
 
