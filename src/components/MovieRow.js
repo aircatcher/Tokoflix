@@ -97,21 +97,21 @@ class MovieRow extends React.Component
                 {
                   (rating >= 0   && rating <= 1) && 
                   ([
-                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
+                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
                   ])
                 }
                 {
                   (rating >= 1.1 && rating <= 2) &&
                   ([
-                    <li><i className="fa fa-star" aria-hidden="true"></i></li>,
                     <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
+                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
                   ])
                 }
                 {
