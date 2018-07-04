@@ -369,7 +369,7 @@ class DetailsHandler extends React.Component
               <div className="purchase-btn-container">
               {
                 localStorage.getItem('Authorization') === null ?
-                  <p style={{color:'gray'}}><i>Login to make a purchase</i></p>
+                  <p id="no-login-purchase-disabled" style={{color:'gray'}}><i>Login to make a purchase</i></p>
                 :
                 ([
                   localStorage.getItem('purchased-'+localStorage.getItem('selMovieID')) === null &&

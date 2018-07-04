@@ -48,6 +48,10 @@
   position: absolute;
   margin: -20px 0 0 33px
 }
+#no-login-purchase-disabled
+{
+  margin: 5px 0 0 -24px
+}
 
 .movie-preview-container
 {
