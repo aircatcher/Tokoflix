@@ -76,7 +76,7 @@ class MovieRow extends React.Component
               <a onClick={this.viewDetails} className="hvr-shutter-out-horizontal" style={{cursor: 'pointer'}}>
                 {
                   movie.poster_path != null ?
-                    <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} title={movie.title} className="img-responsive" alt=" " />
+                    <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} title={movie.title} className="img-responsive homepage-poster" alt=" " />
                   :
                     <img src='images/no-poster.png' title={movie.title} className="img-responsive" alt=" " />
                 }
