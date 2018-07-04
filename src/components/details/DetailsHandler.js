@@ -159,9 +159,6 @@ class DetailsHandler extends React.Component
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">profl</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#trailer" role="tab" data-toggle="tab">Trailer</a>
               </li>
               <li class="nav-item">
@@ -171,7 +168,6 @@ class DetailsHandler extends React.Component
 
             <!-- Tab panes -->
             <div class="tab-content">
-              <div role="tabpanel" class="tab-pane fade in active" id="profile">...</div>
               <div role="tabpanel" class="tab-pane fade in" id="trailer">
                 <iframe width="853" height="480" style="margin-top:5px" src=${ytEmbedURL} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </div>
