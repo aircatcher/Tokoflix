@@ -11,8 +11,8 @@
 .img-responsive
 {
   min-height: 240px;
-  max-height: 240px !important;
-  max-width: 160px !important
+  max-height: 240px;
+  max-width: 160px
 }
 
 .mov-det-votes tr th,
@@ -54,6 +54,13 @@
 }
 
 .agileits_w3layouts_mid_1_home { width: 160px }
+@media (max-width: 414px)
+{
+  .agile_mid_2_home
+  {
+    width: 100%
+  }
+}
 .w3l-movie-text h6
 {
   white-space: nowrap; 
@@ -64,10 +71,10 @@
 
 @media (max-width: 414px)
 {
-  .agileits_w3layouts_mid_1_home
+  /* .agileits_w3layouts_mid_1_home
   {
     width: 70%
-  }
+  } */
   #movie-row-container
   {
     height: 320px;
