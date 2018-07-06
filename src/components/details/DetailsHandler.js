@@ -54,12 +54,16 @@ class DetailsHandler extends React.Component
       /**
        * Trailer
        */
-      var ytEmbedURL = '';
+      var ytEmbedURL = [];
       $.ajax({
         url: tmdbYoutube,
         success: (youtubeResult) =>
         {
-          ytEmbedURL = 'https://www.youtube-nocookie.com/embed/' + youtubeResult.results[0].key;
+          youtubeResult.results.forEach(clip =>
+          {
+            ytEmbedURL.push('https://www.youtube-nocookie.com/embed/' + clip.key);
+          });
+          
         }
       });
 
@@ -71,6 +75,22 @@ class DetailsHandler extends React.Component
           // console.log(selMovie);
 
           /**
+           * Check of Overview is not filled with proper movie description
+           */
+          var overview = selMovie.overview;
+          if(overview === 'Add the plot.')
+            overview = '<i style="color:gray">No overview or plot</i>'
+
+          /**
+           * Vote Average
+           */
+          var vote_average = selMovie.vote_average;
+          if(vote_average === 0)
+            vote_average = '<i style="color:gray">No vote yet</i>'
+          else
+            vote_average = '<b>' + vote_average + '</b> / 10'
+
+          /**
            * Gallery
           */
           var rootimgURL = 'https://image.tmdb.org/t/p/w500';
@@ -78,7 +98,7 @@ class DetailsHandler extends React.Component
           if(selMovie.backdrop_path === null) backdrop = '/images/image-not-available.png';
 
           /**
-           * Pricing
+           * Price Formatting
            */
           var rating = selMovie.vote_average;
           if(rating >= 1 && rating <= 2.99)      price = 3500;
@@ -94,7 +114,35 @@ class DetailsHandler extends React.Component
           }
 
           var formattedPrice = priceFormat(price);
-          
+
+          /**
+           * Release Date Formatting
+           */
+          var rd_year  = selMovie.release_date.substr(0, 4);
+          var rd_month = selMovie.release_date.substr(5, 2);
+          var rd_day   = selMovie.release_date.substr(8, 2);
+          var ordinal_num;
+          if(rd_month === '01') rd_month = 'Jan'
+          else if(rd_month === '02') rd_month = 'Feb'
+          else if(rd_month === '03') rd_month = 'Mar'
+          else if(rd_month === '04') rd_month = 'Apr'
+          else if(rd_month === '05') rd_month = 'May'
+          else if(rd_month === '06') rd_month = 'Jun'
+          else if(rd_month === '07') rd_month = 'Jul'
+          else if(rd_month === '08') rd_month = 'Aug'
+          else if(rd_month === '09') rd_month = 'Sep'
+          else if(rd_month === '10') rd_month = 'Oct'
+          else if(rd_month === '11') rd_month = 'Nov'
+          else if(rd_month === '12') rd_month = 'Dec'
+          if(rd_day.substr(0, 1) !== '0')
+          {
+            if(rd_day.substr(1, 1) === '1') ordinal_num = 'st';
+            else if(rd_day.substr(1, 1) === '2') ordinal_num = 'nd';
+            else if(rd_day.substr(1, 1) === '3') ordinal_num = 'rd';
+            else ordinal_num = 'th';
+          }
+          else ordinal_num = 'th';
+
           let md = '';
           md += `
             <div class="col-sm-8 single-left">
@@ -113,7 +161,18 @@ class DetailsHandler extends React.Component
 
                       <div class="mov-details">
                         <h3>Overview</h3>
-                        <p>${selMovie.overview}</p>
+                        <p>${overview}</p>
+                      </div>
+
+                      <div class="mov-details">
+                        <table class="mov-det-votes">
+                          <tr>
+                            <th><h3>Release Date</h3></th>
+                          </tr>
+                          <tr>
+                            <td><p> ${rd_month} ${rd_day+ordinal_num}, ${rd_year}</p></td>
+                          </tr>
+                        </table>
                       </div>
 
                       <div class="mov-details">
@@ -123,7 +182,7 @@ class DetailsHandler extends React.Component
                             <th><h3>Vote Count</h3></th>
                           </tr>
                           <tr>
-                            <td><p><b>${selMovie.vote_average}</b> / 10</p></td>
+                            <td><p>${vote_average}</p></td>
                             <td><p><b>${selMovie.vote_count}</b> votes</p></td>
                           </tr>
                         </table>
@@ -153,6 +212,11 @@ class DetailsHandler extends React.Component
           document.getElementById('movie-details-sn-page').innerHTML = md;
 
           let extras = '';
+          var trailerCollections = [];
+          ytEmbedURL.forEach(url =>
+          {
+            trailerCollections.push('<iframe width="853" height="480" style="margin-top:5px" src='+url+' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+          });
           extras +=
           `<div style="margin-top:20px">
                   
@@ -169,7 +233,7 @@ class DetailsHandler extends React.Component
             <!-- Tab panes -->
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane fade in" id="trailer">
-                <iframe width="853" height="480" style="margin-top:5px" src=${ytEmbedURL} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                ${trailerCollections}
               </div>
               <div role="tabpanel" class="tab-pane fade in" id="gallery">
                 <img src=${backdrop} alt=${selMovie.title} class="img-responsive movie-preview" style="width:60%" />
