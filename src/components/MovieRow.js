@@ -65,12 +65,14 @@ class MovieRow extends React.Component
   render()
   {
     const { movie } = this.props;
+    var release_year = movie.release_date.substr(0, 4);
     rating = movie.vote_average;
 
     return (
 
       <div className="col-md-2" id="movie-row-container">
         <table>
+          <tbody>
           <tr>
             <td>
               <a onClick={this.viewDetails} className="hvr-shutter-out-horizontal" style={{cursor: 'pointer'}}>
@@ -91,27 +93,29 @@ class MovieRow extends React.Component
             <h6><a onClick={this.viewDetails} style={{cursor: 'pointer'}}>{movie.title}</a></h6>
           </div>
           <div className="mid-2 agile_mid_2_home">
-            <p>2016</p>
+            <p key={movie.id}>
+              { release_year }
+            </p>
             <div className="block-stars">
               <ul className="w3l-ratings">
                 {
                   (rating >= 0   && rating < 1) && 
                   ([
-                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                    <li key='1'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li key='2'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
                   ])
                 }
                 {
                   (rating >= 1 && rating < 2) &&
                   ([
-                    <li><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                    <li key='1'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                    <li key='2'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
                   ])
                 }
                 {
@@ -202,6 +206,7 @@ class MovieRow extends React.Component
         </div>
             </td>
           </tr>
+          </tbody>
         </table>
 
         {/* <div className="ribben">
