@@ -170,7 +170,7 @@ class DetailsHandler extends React.Component
                             <th><h3>Release Date</h3></th>
                           </tr>
                           <tr>
-                            <td><p> ${rd_month} ${rd_day+ordinal_num}, ${rd_year}</p></td>
+                            <td><p> ${rd_month} ${rd_day + '<sup>' + ordinal_num + '</sup>'}, ${rd_year}</p></td>
                           </tr>
                         </table>
                       </div>
