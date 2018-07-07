@@ -114,7 +114,9 @@ export default class Popup extends React.Component
                         </form>
                       </div> */}
 
-                      <div className="cta"><a href="#" disabled>Forgot your password?</a></div>
+                      <div className="cta">
+                        <a disabled>Forgot your password?</a>
+                      </div>
                       
                     </div>
                   </div>

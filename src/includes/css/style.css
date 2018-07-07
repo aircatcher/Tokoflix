@@ -45,9 +45,27 @@
 
 .purchase-btn-container
 {
-  position: absolute;
-  margin: -20px 0 0 33px
+  margin: 15px 0 0 -27px
 }
+#purchase-btn
+{
+	color: #fff;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #FF8D1B;
+  text-align: center;
+  padding: 6px 47px;
+  font-weight: bold;
+
+  transition:.2s ease-in;
+  -webkit-transition:.2s ease-in;
+  -moz-transition:.2s ease-in;
+  -o-transition:.2s ease-in;
+  -ms-transition:.2s ease-in
+}
+#purchase-btn:focus { outline: none }
+#purchase-btn:hover { background: #212121 }
 #no-login-purchase-disabled
 {
   margin: 5px 0 0 -24px
@@ -69,10 +87,20 @@
 .agileits_w3layouts_mid_1_home { width: 160px }
 @media (max-width: 414px)
 {
-  .agile_mid_2_home
+  .layouts_logo { margin-left: 25% }
+  .layouts_logo a h1 { background: none }
+  .w3_search
   {
-    width: 100%
+    margin-left: 10%;
+    width: 80%
   }
+  .w3l_sign_in_register .pull-right { margin-top: 110px; float: inherit !important }
+  .agile_mid_2_home { width: 100% }
+
+  #movie-poster-container img { margin-left: 0 !important }
+  .purchase-btn-container { margin: 15px 0 0 0 !important }
+  .purchase-btn-container #purchase-btn { width: 100% }
+  .video-grid-single-page-agileits .container .col-sm-10 { margin-top: 20px }
 }
 .w3l-movie-text h6
 {

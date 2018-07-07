@@ -53,13 +53,14 @@ class MovieRow extends React.Component
 
   LoadingDimmer = () =>
   {
+    return (
     <Segment>
       <Dimmer active>
         <Loader />
       </Dimmer>
   
       <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
-    </Segment>
+    </Segment>);
   }
 
   render()

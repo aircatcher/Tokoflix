@@ -143,73 +143,33 @@ class DetailsHandler extends React.Component
           }
           else ordinal_num = 'th';
 
-          let md = '';
-          md += `
-            <div class="col-sm-8 single-left">
-              <div class="song">
-                <div class="song-info">
-                  <h2>${selMovie.title}</h2>
-                </div>
-                <div class="video-grid-single-page-agileits">
+          let md_title = '';
+          md_title += `<h2>${selMovie.title}</h2>`;
+          document.getElementsByClassName('song-info').innerHTML = md_title;
 
-                  <div class="container" style="margin-top:20px">
-                    <div class="col-sm-2">
-                      <img src=${'https://image.tmdb.org/t/p/w200' + selMovie.poster_path} alt=${selMovie.title} class="img-responsive" style="margin-left:-18%" />
-                    </div>
+          let md_poster = '';
+          md_poster += `<img src=${'https://image.tmdb.org/t/p/w200' + selMovie.poster_path} alt=${selMovie.title} class="img-responsive" style="margin-left:-18%" />`;
+          document.getElementById('movie-poster-container').innerHTML = md_poster;
 
-                    <div class="col-sm-10">
+          let md_overview = '';
+          md_overview = `${overview}`;
+          document.getElementById('movie-overview-container').innerHTML = md_overview;
 
-                      <div class="mov-details">
-                        <h3>Overview</h3>
-                        <p>${overview}</p>
-                      </div>
+          let md_release_date = '';
+          md_release_date = `${rd_month} ${rd_day + '<sup>' + ordinal_num + '</sup>'}, ${rd_year}`;
+          document.getElementById('movie-release-date').innerHTML = md_release_date;
 
-                      <div class="mov-details">
-                        <table class="mov-det-votes">
-                          <tr>
-                            <th><h3>Release Date</h3></th>
-                          </tr>
-                          <tr>
-                            <td><p> ${rd_month} ${rd_day + '<sup>' + ordinal_num + '</sup>'}, ${rd_year}</p></td>
-                          </tr>
-                        </table>
-                      </div>
+          let md_vote_avg = '';
+          md_vote_avg = `${vote_average}`;
+          document.getElementById('vote-average-container').innerHTML = md_vote_avg;
 
-                      <div class="mov-details">
-                        <table class="mov-det-votes">
-                          <tr>
-                            <th><h3>Vote Average</h3></th>
-                            <th><h3>Vote Count</h3></th>
-                          </tr>
-                          <tr>
-                            <td><p>${vote_average}</p></td>
-                            <td><p><b>${selMovie.vote_count}</b> votes</p></td>
-                          </tr>
-                        </table>
-                      </div>
+          let md_vote_count = '';
+          md_vote_count = `<b>${selMovie.vote_count}</b> votes`;
+          document.getElementById('vote-count-container').innerHTML = md_vote_count;
 
-                      <div class="mov-details">
-                        <table class="mov-det-votes">
-                          <tr>
-                            <th><h3>Price</h3></th>
-                          </tr>
-                          <tr>
-                            <td>
-                              Rp ${formattedPrice}
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="clearfix"> </div>
-            </div>
-            <div class="clearfix"> </div>`;
-          document.getElementById('movie-details-sn-page').innerHTML = md;
+          let md_price = '';
+          md_price = `Rp ${formattedPrice}`;
+          document.getElementById('price-container').innerHTML = md_price;
 
           let extras = '';
           var trailerCollections = [];
@@ -251,7 +211,7 @@ class DetailsHandler extends React.Component
 
           this.setState(
           {
-            contents: md
+            contents: md_title, md_poster, md_overview, md_release_date, md_vote_avg, md_vote_count
           });
         },
         error: (xhr, status, err) =>
@@ -398,7 +358,9 @@ class DetailsHandler extends React.Component
               <ul className="pull-right">
                 {
                   localStorage.getItem('Authorization') === null ?
-                    <li><a href="#" data-toggle="modal" data-target="#authModal">Login</a></li>
+                    <li>
+                      <a data-toggle="modal" data-target="#authModal" style={{cursor: 'pointer'}}>Login</a>
+                    </li>
                   :
                   ([
                     <li key="0">
@@ -429,25 +391,89 @@ class DetailsHandler extends React.Component
             </div>
 
             <div className="single-page-agile-info">
-              <div className="show-top-grids-w3lagile" id="movie-details-sn-page"></div>
-              <div className="purchase-btn-container">
-              {
-                localStorage.getItem('Authorization') === null ?
-                  <p id="no-login-purchase-disabled" style={{color:'gray'}}><i>Login to make a purchase</i></p>
-                :
-                ([
-                  localStorage.getItem('purchased-'+localStorage.getItem('selMovieID')) === null &&
-                    <Button id="purchase-btn" color="orange" className="fade" role="button" style={{opacity:1}} onClick={this.purchase}>
-                      Purchase
-                    </Button>,
-                  
-                  localStorage.getItem('purchased-'+localStorage.getItem('selMovieID')) === 'true' &&
-                    <Button id="purchase-btn" color="gray" className="fade" role="button" style={{opacity:1}} onClick={this.purchase} disabled>
-                      Purchased
-                    </Button>
-                ])
-              }
+              <div className="show-top-grids-w3lagile">
+
+                <div className="col-sm-8 single-left">
+                  <div className="song">
+                    <div className="song-info"></div>
+                    <div className="video-grid-single-page-agileits">
+
+                      <div className="container" style={{marginTop:20}}>
+                        <div className="col-sm-2">
+                          <div id="movie-poster-container"></div>
+                          <div className="purchase-btn-container">
+                          {
+                            localStorage.getItem('Authorization') === null ?
+                              <p id="no-login-purchase-disabled" style={{color:'gray'}}><i>Login to make a purchase</i></p>
+                            :
+                            ([
+                              localStorage.getItem('purchased-'+localStorage.getItem('selMovieID')) === null &&
+                                <a id="purchase-btn" color="orange" className="fade" role="button" style={{cursor:'pointer',opacity:1}} onClick={this.purchase}>
+                                  Purchase
+                                </a>,
+                              
+                              localStorage.getItem('purchased-'+localStorage.getItem('selMovieID')) === 'true' &&
+                                <Button id="purchase-btn" color="gray" className="fade" role="button" style={{opacity:1}} onClick={this.purchase} disabled>
+                                  Purchased
+                                </Button>
+                            ])
+                          }
+                          </div>
+                        </div>
+
+                        <div className="col-sm-10">
+
+                          <div className="mov-details">
+                            <h3>Overview</h3>
+                            <p id="movie-overview-container"></p>
+                          </div>
+
+                          <div className="mov-details">
+                            <table className="mov-det-votes">
+                              <tr>
+                                <th><h3>Release Date</h3></th>
+                              </tr>
+                              <tr>
+                                <td><p id="movie-release-date"></p></td>
+                              </tr>
+                            </table>
+                          </div>
+
+                          <div className="mov-details">
+                            <table className="mov-det-votes">
+                              <tr>
+                                <th><h3>Vote Average</h3></th>
+                                <th><h3>Vote Count</h3></th>
+                              </tr>
+                              <tr>
+                                <td><p id="vote-average-container"></p></td>
+                                <td><p id="vote-count-container"></p></td>
+                              </tr>
+                            </table>
+                          </div>
+
+                          <div className="mov-details">
+                            <table className="mov-det-votes">
+                              <tr>
+                                <th><h3>Price</h3></th>
+                              </tr>
+                              <tr>
+                                <td><div id="price-container"></div></td>
+                              </tr>
+                            </table>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div className="clearfix"> </div>
+                </div>
+                <div className="clearfix"> </div>
+
               </div>
+
               <div id="some-extras"></div>
 
               {/*body wrapper start*/}

@@ -274,7 +274,9 @@ class Latest extends React.Component
               <ul className="pull-right">
                 {
                   localStorage.getItem('Authorization') === null ?
-                    <li><a href="#" data-toggle="modal" data-target="#authModal">Login</a></li>
+                    <li>
+                      <a data-toggle="modal" data-target="#authModal" style={{cursor: 'pointer'}}>Login</a>
+                    </li>
                   :
                   ([
                     <li key="0">
