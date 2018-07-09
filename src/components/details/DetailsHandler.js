@@ -100,9 +100,10 @@ class DetailsHandler extends React.Component
            * Price Formatting
            */
           var rating = selMovie.vote_average;
-          if(rating >= 1 && rating <= 2.99)      price = 3500;
-          else if(rating >= 3 && rating <= 5.99) price = 8250;
-          else if(rating >= 6 && rating <= 7.99) price = 16350;
+          if(rating >= 0 && rating < 1) price = 'FREE';
+          else if(rating >= 1 && rating < 3) price = 3500;
+          else if(rating >= 3 && rating < 6) price = 8250;
+          else if(rating >= 6 && rating < 8) price = 16350;
           else if(rating >= 8 && rating <= 10)   price = 21250;
           
           const priceFormat = (x) =>
@@ -167,7 +168,8 @@ class DetailsHandler extends React.Component
           document.getElementById('vote-count-container').innerHTML = md_vote_count;
 
           let md_price = '';
-          md_price = `Rp ${formattedPrice}`;
+          if(price === 'FREE') md_price = `${formattedPrice}`;
+          else md_price = `Rp ${formattedPrice}`;
           document.getElementById('price-container').innerHTML = md_price;
 
           let extras = '';
@@ -356,7 +358,7 @@ class DetailsHandler extends React.Component
             <div className="w3l_sign_in_register">
               <ul className="pull-right">
                 {
-                  localStorage.getItem('Authorization') === null ?
+                  (localStorage.getItem('Authorization') !== null && localStorage.getItem('Auth Status') === 'true') ?
                     <li>
                       <a data-toggle="modal" data-target="#authModal" style={{cursor: 'pointer'}}>Login</a>
                     </li>
@@ -402,12 +404,12 @@ class DetailsHandler extends React.Component
                           <div id="movie-poster-container"></div>
                           <div className="purchase-btn-container">
                           {
-                            localStorage.getItem('Authorization') === null ?
+                            (localStorage.getItem('Authorization') === null || localStorage.getItem('Auth Status') === null) ?
                               <p id="no-login-purchase-disabled" style={{color:'gray'}}><i>Login to make a purchase</i></p>
                             :
                             ([
                               localStorage.getItem('purchased-'+localStorage.getItem('selMovieID')) === null &&
-                                <a id="purchase-btn" color="orange" className="fade" role="button" style={{cursor:'pointer',opacity:1}} onClick={this.purchase}>
+                                <a id="purchase-btn" className="fade" role="button" style={{cursor:'pointer',opacity:1}} onClick={this.purchase}>
                                   Purchase
                                 </a>,
                               

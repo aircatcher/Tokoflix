@@ -273,7 +273,7 @@ class Latest extends React.Component
             <div className="w3l_sign_in_register">
               <ul className="pull-right">
                 {
-                  localStorage.getItem('Authorization') === null ?
+                  (localStorage.getItem('Authorization') === null && localStorage.getItem('Auth Status') === null) ?
                     <li>
                       <a data-toggle="modal" data-target="#authModal" style={{cursor: 'pointer'}}>Login</a>
                     </li>

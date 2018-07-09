@@ -16,7 +16,7 @@ if(details === null) details = "/details";
  */
 if( localStorage.getItem('Authorization') === null )
 {
-  if( localStorage.getItem('userBalance') !== null )
+  if (localStorage.getItem('Authorization') !== null && localStorage.getItem('Auth Status') === 'true')
     localStorage.removeItem('userBalance');
 }
 

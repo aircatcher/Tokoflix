@@ -47,6 +47,17 @@
   color: white !important
 }
 
+.cta:hover
+{
+  background-color: #42B549;
+
+  transition:.2s ease-in;
+	-webkit-transition:.2s ease;
+	-moz-transition:.2s ease;
+	-o-transition:.2s ease;
+	-ms-transition:.2s ease
+}
+
 #some-extras
 {
   margin-top: 40px

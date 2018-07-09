@@ -93,12 +93,12 @@ class MovieRow extends React.Component
             <h6><a onClick={this.viewDetails} style={{cursor: 'pointer'}}>{movie.title}</a></h6>
             <div id="purchase-status">
             {
-              localStorage.getItem('Authorization') !== null &&
+              (localStorage.getItem('Authorization') !== null && localStorage.getItem('Auth Status') === 'true') &&
               ([
                 localStorage.getItem('purchased-' + movie.id) === null &&
-                  <p className="ps-text">Not Purchased</p>,
+                  <p className="ps-text" key={movie.id}>Not Purchased</p>,
                 localStorage.getItem('purchased-' + movie.id) === 'true' &&
-                  <p className="ps-text">Purchased</p>
+                  <p className="ps-text" key={movie.id}>Purchased</p>
               ])
             }
             </div>
@@ -108,109 +108,114 @@ class MovieRow extends React.Component
               { release_year }
             </p>
             <div className="block-stars">
-              <ul className="w3l-ratings">
-                {
-                  (rating >= 0   && rating < 1) && 
-                  ([
-                    <li key='1'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
-                  ])
-                }
-                {
-                  (rating >= 1 && rating < 2) &&
-                  ([
-                    <li key='1'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
-                  ])
-                }
-                {
-                  (rating >= 2 && rating < 3) &&
-                  ([
-                    <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
-                  ])
-                }
-                {
-                  (rating >= 3 && rating < 4) &&
-                  ([
-                    <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
-                  ])
-                }
-                {
-                  (rating >= 4 && rating < 5) &&
-                  ([
-                    <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
-                  ])
-                }
-                {
-                  (rating >= 5 && rating < 6) &&
-                  ([
-                    <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
-                  ])
-                }
-                {
-                  (rating >= 6 && rating < 7) &&
-                  ([
-                    <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
-                    
-                  ])
-                }
-                {
-                  (rating >= 7 && rating < 8) &&
-                  ([
-                    <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
-                  ])
-                }
-                {
-                  (rating >= 8 && rating < 9) &&
-                  ([
-                    <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
-                  ])
-                }
-                {
-                  (rating >= 9 && rating < 10) &&
-                  ([
-                    <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='4'><i className="fa fa-star" aria-hidden="true"></i></li>,
-                    <li key='5'><i className="fa fa-star" aria-hidden="true"></i></li>
-                  ])
-                }
-              </ul>
+            {
+              movie.vote_count === 0 ?
+                <p><i>No Rating</i></p>
+              :
+                (<ul className="w3l-ratings">
+                  {
+                    (movie.vote_count > 0 && rating >= 0   && rating < 1) && 
+                    ([
+                      <li key='1'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                    ])
+                  }
+                  {
+                    (rating >= 1 && rating < 2) &&
+                    ([
+                      <li key='1'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                    ])
+                  }
+                  {
+                    (rating >= 2 && rating < 3) &&
+                    ([
+                      <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                    ])
+                  }
+                  {
+                    (rating >= 3 && rating < 4) &&
+                    ([
+                      <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                    ])
+                  }
+                  {
+                    (rating >= 4 && rating < 5) &&
+                    ([
+                      <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                    ])
+                  }
+                  {
+                    (rating >= 5 && rating < 6) &&
+                    ([
+                      <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star-o" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                    ])
+                  }
+                  {
+                    (rating >= 6 && rating < 7) &&
+                    ([
+                      <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                      
+                    ])
+                  }
+                  {
+                    (rating >= 7 && rating < 8) &&
+                    ([
+                      <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star-o" aria-hidden="true"></i></li>
+                    ])
+                  }
+                  {
+                    (rating >= 8 && rating < 9) &&
+                    ([
+                      <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star-half-o" aria-hidden="true"></i></li>
+                    ])
+                  }
+                  {
+                    (rating >= 9 && rating < 10) &&
+                    ([
+                      <li key='1'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='2'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='3'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='4'><i className="fa fa-star" aria-hidden="true"></i></li>,
+                      <li key='5'><i className="fa fa-star" aria-hidden="true"></i></li>
+                    ])
+                  }
+                </ul>)
+            }
             </div>
             <div className="clearfix"></div>
           </div>

@@ -2,33 +2,78 @@ import React from 'react';
 import $ from 'jquery';
 import { Form, Input } from 'semantic-ui-react';
 
+var api_key = '1c67c0067c6a82a74b92665f1e488325';
+
 export default class Popup extends React.Component
 {
-  // handleValidation()
-  // {
-    // let fields = this.state.fields;
-    // let errors = {};
-    // // let formIsValid = true;
+  constructor(props)
+  {
+    super(props);
+    this.loginTokenValidated = this.loginTokenValidated.bind(this);
+  }
+  
+  /**
+   * #1 Create a Request Token
+   */
+  login(e)
+  {
+    e.preventDefault();
+    
+    const newToken = 'https://api.themoviedb.org/3/authentication/token/new?api_key=' + api_key;
+    $.ajax({
+      url: newToken,
+      success: (result) =>
+      {
+        // console.log('Successfuly fetched the data');
+        localStorage.setItem('Auth Status', result.success);
+        localStorage.setItem('Authorization', 'Bearer ' + result.request_token)
+        window.open('https://www.themoviedb.org/authenticate/' + result.request_token);
+      },
+      error: (xhr, status, err) =>
+      {
+        // console.log('Failed to fetch data');
+      }
+    });
 
-    // //Name
-    // if(!fields["username"])
-    // {
-    //   // formIsValid = false;
-    //   errors["username"] = "Username cannot be empty";
-    // }
+    const newSessionID = 'https://api.themoviedb.org/3/authentication/session/new?api_key=' + api_key;
+    $.ajax({
+      url: newSessionID,
+      success: (result) =>
+      {
+        console.log(result)
+        // console.log('Successfuly fetched the data');
+      },
+      error: (xhr, status, err) =>
+      {
+        // console.log('Failed to fetch data');
+      }
+    });
+  }
 
-    // //Email
-    // if(!fields["password"])
-    // {
-    //   // formIsValid = false;
-    //   errors["password"] = "Password be empty";
-    // }
+  /**
+   * #2 Create a new session ID with the user-authorized request token
+   * https://www.themoviedb.org/authenticate/{REQUEST_TOKEN}
+   */
+  loginTokenValidated(e)
+  {
+    e.preventDefault();
+    
+    const newSessionID = 'https://api.themoviedb.org/3/authentication/session/new?api_key=' + api_key;
+    $.ajax({
+      url: newSessionID,
+      success: (result) =>
+      {
+        console.log(result)
+        // console.log('Successfuly fetched the data');
+      },
+      error: (xhr, status, err) =>
+      {
+        // console.log('Failed to fetch data');
+      }
+    });
+  }
 
-    // this.setState({ errors: errors });
-    // // return formIsValid;
-  // }
-
-  handleFormSubmit(e)
+  loginGuest(e)
   {
     e.preventDefault();
 
@@ -55,6 +100,11 @@ export default class Popup extends React.Component
     // document.getElementById('please-refresh').innerHTML = 'Please refresh this window';
   }
 
+  forgotPassword(e)
+  {
+    e.preventDefault();
+  }
+
   handleChange(field, e)
   {         
     let fields = this.state.fields;
@@ -72,6 +122,30 @@ export default class Popup extends React.Component
     document.getElementById('errm').innerHTML = 'Registered users need to verify E-Mail first<br/>Please check your E-Mail if you haven\'t';
     document.getElementById('login-card').classList.add('shaker');
   }
+
+  // handleValidation()
+  // {
+  //   let fields = this.state.fields;
+  //   let errors = {};
+  //   // let formIsValid = true;
+
+  //   //Name
+  //   if(!fields["username"])
+  //   {
+  //     // formIsValid = false;
+  //     errors["username"] = "Username cannot be empty";
+  //   }
+
+  //   //Email
+  //   if(!fields["password"])
+  //   {
+  //     // formIsValid = false;
+  //     errors["password"] = "Password be empty";
+  //   }
+
+  //   this.setState({ errors: errors });
+  //   // return formIsValid;
+  // }
 
   render()
   {
@@ -94,12 +168,13 @@ export default class Popup extends React.Component
                         {/* <div className="tooltip">Click Me</div> */}
                       </div>
 
-                      <Form onSubmit={this.handleFormSubmit}>
+                      <Form onSubmit={this.login}>
+                        <Form.Field id="token-is-validated"></Form.Field>
                         <Form.Field>
-                          <h3><label>Login as a Guest</label></h3>
-                          <Input type="text" name="username" placeholder="Username" disabled />
-                          <Input type="password" name="password" placeholder="Password" disabled />
-                          <input type="submit" value="Login"/>
+                          <h3><label>Login</label></h3>
+                          <Input type="text" name="username" placeholder="Username" disabled/>
+                          <Input type="password" name="password" placeholder="Password" disabled/>
+                          <input type="submit" name="login_user" value="Login"/>
                         </Form.Field>
                       </Form>
 
@@ -114,8 +189,11 @@ export default class Popup extends React.Component
                         </form>
                       </div> */}
 
-                      <div className="cta">
-                        <a disabled>Forgot your password?</a>
+                      <div className="cta" onClick={this.loginGuest} style={{cursor:'pointer'}}>
+                        <a>GUUEST LOGIN - DEMO</a>
+                      </div>
+                      <div className="cta" onClick={this.forgotPassword} style={{cursor:'pointer'}}>
+                        <a>Forgot your password?</a>
                       </div>
                       
                     </div>
