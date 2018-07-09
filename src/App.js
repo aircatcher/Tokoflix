@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
 import MovieDetails from './pages/MovieDetails';
+import Libraries from './pages/Libraries';
 
 /**
  * Get the URL for movie details
@@ -24,6 +25,7 @@ const App = () =>
   <div>
     <Route path="/" exact component={HomePage} />
     <Route path={details} exact component={MovieDetails} />
+    <Route path="/library" exact component={Libraries} />
   </div>;
 
 export default App;

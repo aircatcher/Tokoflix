@@ -93,7 +93,13 @@ class Navbar extends React.Component
                       </li>
                     </ul>
                   </li>
-                  <li><a href="news.html">news</a></li>
+
+                  {
+                    window.location.pathname === '/library' ?
+                      <li className="active"><a href="/library">My Library</a></li>
+                    :
+                      <li><a href="/library">My Library</a></li>
+                  }
                 </ul>
               </nav>
             </div>
