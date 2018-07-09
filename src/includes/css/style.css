@@ -5,7 +5,8 @@
 
 #movie-row-container
 {
-  height: 320px
+  height: 340px
+
 }
 
 .hvr-shutter-out-horizontal:before
@@ -69,6 +70,11 @@
 #no-login-purchase-disabled
 {
   margin: 5px 0 0 -24px
+}
+
+.ps-text
+{
+  font-size: 12px !important
 }
 
 .movie-preview-container

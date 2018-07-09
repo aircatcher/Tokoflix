@@ -25,7 +25,6 @@ class MovieRow extends React.Component
   {
     const { movie } = this.props;
     
-    var movieID = movie.id;
     var title = movie.title;
 
     /**
@@ -45,8 +44,8 @@ class MovieRow extends React.Component
     /**
      * Replace the address URL with the manipulated title
      */
-    var genURL = '/' + movieID + '/' + title;
-    localStorage.setItem('selMovieID', movieID);
+    var genURL = '/' + movie.id + '/' + title;
+    localStorage.setItem('selMovieID', movie.id);
     localStorage.setItem('movieDetailsURL', genURL);
     window.location.href = genURL;
   }
@@ -92,6 +91,17 @@ class MovieRow extends React.Component
             <div className="mid-1 agileits_w3layouts_mid_1_home">
           <div className="w3l-movie-text">
             <h6><a onClick={this.viewDetails} style={{cursor: 'pointer'}}>{movie.title}</a></h6>
+            <div id="purchase-status">
+            {
+              localStorage.getItem('Authorization') !== null &&
+              ([
+                localStorage.getItem('purchased-' + movie.id) === null &&
+                  <p className="ps-text">Not Purchased</p>,
+                localStorage.getItem('purchased-' + movie.id) === 'true' &&
+                  <p className="ps-text">Purchased</p>
+              ])
+            }
+            </div>
           </div>
           <div className="mid-2 agile_mid_2_home">
             <p key={movie.id}>
