@@ -1,6 +1,5 @@
 import React from 'react';
 import $ from 'jquery';
-import { Button } from 'semantic-ui-react';
 // import MovieRow from '../MovieRow';
 
 import Navbar from '../page/Navbar';
@@ -145,7 +144,7 @@ class DetailsHandler extends React.Component
 
           let md_title = '';
           md_title += `<h2>${selMovie.title}</h2>`;
-          document.getElementsByClassName('song-info').innerHTML = md_title;
+          document.getElementById('movie-title').innerHTML = md_title;
 
           let md_poster = '';
           md_poster += `<img src=${'https://image.tmdb.org/t/p/w200' + selMovie.poster_path} alt=${selMovie.title} class="img-responsive" style="margin-left:-18%" />`;
@@ -395,7 +394,7 @@ class DetailsHandler extends React.Component
 
                 <div className="col-sm-8 single-left">
                   <div className="song">
-                    <div className="song-info"></div>
+                    <div className="song-info" id="movie-title"></div>
                     <div className="video-grid-single-page-agileits">
 
                       <div className="container" style={{marginTop:20}}>
@@ -421,7 +420,7 @@ class DetailsHandler extends React.Component
                           </div>
                         </div>
 
-                        <div className="col-sm-10">
+                        <div className="col-sm-10" style={{marginTop:-15}}>
 
                           <div className="mov-details">
                             <h3>Overview</h3>

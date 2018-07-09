@@ -11,7 +11,7 @@ import Popup from './Popup';
 import '../../includes/css/style.css';
 
 var tp = 0;
-var page_num_search = 1;
+// var page_num_search = 1;
 var page_num_np = 1;
 var blc = 0;
 if(localStorage.getItem('userBalance') === null)
@@ -45,7 +45,7 @@ class Latest extends React.Component
   {
     var api_key = '1c67c0067c6a82a74b92665f1e488325';
     var region = 'ID';
-    var qs = '';
+    // let qs = '';
 
     if(keyword !== '')
     {
@@ -97,7 +97,7 @@ class Latest extends React.Component
             {
               if(i === 0)
               {
-                qs = '<div className="col-md-2">';
+                // qs = '<div className="col-md-2">';
               }
               else if(i%6 !== 0)
               {
@@ -107,7 +107,7 @@ class Latest extends React.Component
               else
               {
                 const mRow = <MovieRow key={results[i].id} movie={results[i]} />;
-                qs += '</div><div className="col-md-2">' + mRow;
+                // qs += '</div><div className="col-md-2">' + mRow;
                 movieContents.push(mRow);
               }
             }
