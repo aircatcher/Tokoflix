@@ -428,16 +428,8 @@ class DetailsHandler extends React.Component
                           </div>
 
                           <div className="mov-details">
-                            <table className="mov-det-votes">
-                              <tbody>
-                                <tr>
-                                  <th><h3>Release Date</h3></th>
-                                </tr>
-                                <tr>
-                                  <td><p id="movie-release-date"></p></td>
-                                </tr>
-                              </tbody>
-                            </table>
+                            <h3>Release Date</h3>
+                            <p id="movie-release-date"></p>
                           </div>
 
                           <div className="mov-details">
@@ -456,16 +448,8 @@ class DetailsHandler extends React.Component
                           </div>
 
                           <div className="mov-details">
-                            <table className="mov-det-votes">
-                              <tbody>
-                                <tr>
-                                  <th><h3>Price</h3></th>
-                                </tr>
-                                <tr>
-                                  <td><div id="price-container"></div></td>
-                                </tr>
-                              </tbody>
-                            </table>
+                            <h3>Price</h3>
+                            <div id="price-container"></div>
                           </div>
 
                         </div>
