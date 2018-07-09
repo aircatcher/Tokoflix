@@ -67,9 +67,9 @@
 }
 #purchase-btn:focus { outline: none }
 #purchase-btn:hover { background: #212121 }
-#no-login-purchase-disabled
+#no-login-purchase-disabled i
 {
-  margin: 5px 0 0 -24px
+  margin: 5px 0 0 5px
 }
 
 .ps-text
@@ -102,6 +102,8 @@
   }
   .w3l_sign_in_register .pull-right { margin-top: 110px; float: inherit !important }
   .agile_mid_2_home { width: 100% }
+
+  .is-purchased { width: 100% !important }
 
   #movie-poster-container img { margin-left: 0 !important }
   .purchase-btn-container { margin: 15px 0 0 0 !important }

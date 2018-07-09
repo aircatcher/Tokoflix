@@ -413,9 +413,9 @@ class DetailsHandler extends React.Component
                                 </a>,
                               
                               localStorage.getItem('purchased-'+localStorage.getItem('selMovieID')) === 'true' &&
-                                <Button id="purchase-btn" color="gray" className="fade" role="button" style={{opacity:1}} onClick={this.purchase} disabled>
+                                <a id="purchase-btn" className="is-purchased" style={{opacity:1,backgroundColor:'gray',pointerEvents:'none',marginLeft:-1,width:'86%'}}>
                                   Purchased
-                                </Button>
+                                </a>
                             ])
                           }
                           </div>
