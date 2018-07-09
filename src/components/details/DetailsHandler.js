@@ -429,36 +429,42 @@ class DetailsHandler extends React.Component
 
                           <div className="mov-details">
                             <table className="mov-det-votes">
-                              <tr>
-                                <th><h3>Release Date</h3></th>
-                              </tr>
-                              <tr>
-                                <td><p id="movie-release-date"></p></td>
-                              </tr>
+                              <tbody>
+                                <tr>
+                                  <th><h3>Release Date</h3></th>
+                                </tr>
+                                <tr>
+                                  <td><p id="movie-release-date"></p></td>
+                                </tr>
+                              </tbody>
                             </table>
                           </div>
 
                           <div className="mov-details">
                             <table className="mov-det-votes">
-                              <tr>
-                                <th><h3>Vote Average</h3></th>
-                                <th><h3>Vote Count</h3></th>
-                              </tr>
-                              <tr>
-                                <td><p id="vote-average-container"></p></td>
-                                <td><p id="vote-count-container"></p></td>
-                              </tr>
+                              <tbody>
+                                <tr>
+                                  <th><h3>Vote Average</h3></th>
+                                  <th><h3>Vote Count</h3></th>
+                                </tr>
+                                <tr>
+                                  <td><p id="vote-average-container"></p></td>
+                                  <td><p id="vote-count-container"></p></td>
+                                </tr>
+                              </tbody>
                             </table>
                           </div>
 
                           <div className="mov-details">
                             <table className="mov-det-votes">
-                              <tr>
-                                <th><h3>Price</h3></th>
-                              </tr>
-                              <tr>
-                                <td><div id="price-container"></div></td>
-                              </tr>
+                              <tbody>
+                                <tr>
+                                  <th><h3>Price</h3></th>
+                                </tr>
+                                <tr>
+                                  <td><div id="price-container"></div></td>
+                                </tr>
+                              </tbody>
                             </table>
                           </div>
 
