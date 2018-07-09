@@ -95,10 +95,13 @@ class Navbar extends React.Component
                   </li>
 
                   {
-                    window.location.pathname === '/library' ?
-                      <li className="active"><a href="/library">My Library</a></li>
-                    :
-                      <li><a href="/library">My Library</a></li>
+                    (localStorage.getItem('Authorization') !== null || localStorage.getItem('Auth Status') === 'true') &&
+                      (
+                        window.location.pathname === '/library' ?
+                        <li className="active"><a href="/library">My Library</a></li>
+                      :
+                        <li><a href="/library">My Library</a></li>
+                      )
                   }
                 </ul>
               </nav>
