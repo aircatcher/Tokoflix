@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import MovieDetails from './pages/MovieDetails';
 import Libraries from './pages/Libraries';
+import LibrariesUnauthorized from './pages/Libraries.unaothorized';
 
 /**
  * Get the URL for movie details
@@ -25,7 +26,13 @@ const App = () =>
   <div>
     <Route path="/" exact component={HomePage} />
     <Route path={details} exact component={MovieDetails} />
-    <Route path="/library" exact component={Libraries} />
+    {
+      (localStorage.getItem('Authorization') !== null && localStorage.getItem('Auth Status') === 'true') ?
+        <Route path="/library" exact component={Libraries} />
+      :
+        <Route path="/library" exact component={LibrariesUnauthorized} />
+    }
+    
   </div>;
 
 export default App;

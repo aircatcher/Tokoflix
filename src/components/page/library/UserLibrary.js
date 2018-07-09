@@ -44,7 +44,6 @@ class UserLibrary extends React.Component
   {
     var api_key = '1c67c0067c6a82a74b92665f1e488325';
     var region = 'ID';
-    // let qs = '';
 
     if(keyword !== '')
     {
@@ -94,11 +93,7 @@ class UserLibrary extends React.Component
             
             for(i = 0; i < results.length; i++)
             {
-              if(i === 0)
-              {
-                // qs = '<div className="col-md-2">';
-              }
-              else if(i%6 !== 0)
+              if(i%6 !== 0)
               {
                 const mRow = <MovieRow key={results[i].id} movie={results[i]} />;
                 movieContents.push(mRow);
@@ -106,12 +101,11 @@ class UserLibrary extends React.Component
               else
               {
                 const mRow = <MovieRow key={results[i].id} movie={results[i]} />;
-                // qs += '</div><div className="col-md-2">' + mRow;
                 movieContents.push(mRow);
               }
             }
 
-            var pageHeading = document.getElementById('page-heading-text').innerHTML = 'Movies Search';
+            // pageHeading = document.getElementById('page-heading-text').innerHTML = 'Movies Search';
           }
           else
           {
@@ -122,13 +116,12 @@ class UserLibrary extends React.Component
               </div>
             );
 
-            pageHeading = document.getElementById('page-heading-text').innerHTML = 'Nothing Found';
+            // pageHeading = document.getElementById('page-heading-text').innerHTML = 'Nothing Found';
           }
 
           this.setState(
           {
             contents: movieContents,
-            heading: pageHeading
           });
         },
         error: (xhr, status, err) =>
@@ -205,7 +198,7 @@ class UserLibrary extends React.Component
             }
           }
 
-          var pageHeading = document.getElementById('page-heading-text').innerHTML = 'My Library';
+          // pageHeading = document.getElementById('page-heading-text').innerHTML = 'My Library';
 
           this.setState(
           {

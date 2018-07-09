@@ -80,12 +80,12 @@ class Navbar extends React.Component
                     <a href={null} className="dropdown-toggle" data-toggle="dropdown">Genres <b className="caret"></b></a>
                     <ul className="dropdown-menu multi-column columns-2">
                       <li>
-                        <div className="col-sm-6">
+                        <div className="col-sm-6" style={{background:'aliceblue'}}>
                           Movies<hr/>
                           <ul className="multi-column-dropdown" id="genre-movies-col"></ul>
                         </div>
                         
-                        <div className="col-sm-6">
+                        <div className="col-sm-6" style={{background:'antiquewhite'}}>
                           TV<hr/>
                           <ul className="multi-column-dropdown" id="genre-tv-col"></ul>
                         </div>
