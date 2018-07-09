@@ -1,7 +1,56 @@
 import React from 'react';
+import $ from 'jquery';
 
 class Navbar extends React.Component
 {
+  constructor(props)
+  {
+    super(props);
+    this.state = {};
+  }
+
+  componentWillMount()
+  {
+    this.getGenreList();
+  }
+
+  getGenreList()
+  {
+    var api_key = '1c67c0067c6a82a74b92665f1e488325';
+    const tmdbMovieGenres = 'https://api.themoviedb.org/3/genre/movie/list?api_key=' + api_key + '&language=en-US';
+    const tmdbTVGenres    = 'https://api.themoviedb.org/3/genre/tv/list?api_key=' + api_key + '&language=en-US';
+
+    /**
+     * List of Available Movie Genres from TMDb
+     */
+    var genreListMovies = [];
+    $.ajax({
+      url: tmdbMovieGenres,
+      success: (result) =>
+      {
+        result.genres.forEach(genre => { genreListMovies.push(genre.name) })
+        let genre_movies_col = '';
+        genreListMovies.forEach(genre => { genre_movies_col += `<li><a href="#">${genre}</a></li>` });
+        document.getElementById('genre-movies-col').innerHTML = genre_movies_col;
+      }
+    });
+
+    /**
+     * List of Available TV Genres from TMDb
+     */
+    var genreListTV = [];
+    $.ajax({
+      url: tmdbTVGenres,
+      success: (result) =>
+      {
+        result.genres.forEach(genre => { genreListTV.push(genre.name) })
+        let genre_tv_col = '';
+        genreListTV.forEach(genre => { genre_tv_col += `<li><a href="#">${genre}</a></li>` });
+        document.getElementById('genre-tv-col').innerHTML = genre_tv_col;
+      }
+    });
+  }
+
   render()
   {
     return (
@@ -29,44 +78,21 @@ class Navbar extends React.Component
                     
                   <li className="dropdown">
                     <a href={null} className="dropdown-toggle" data-toggle="dropdown">Genres <b className="caret"></b></a>
-                    <ul className="dropdown-menu multi-column columns-3">
+                    <ul className="dropdown-menu multi-column columns-2">
                       <li>
-                      <div className="col-sm-4">
-                        <ul className="multi-column-dropdown">
-                          <li><a href="genres.html">Action</a></li>
-                          <li><a href="genres.html">Biography</a></li>
-                          <li><a href="genres.html">Crime</a></li>
-                          <li><a href="genres.html">Family</a></li>
-                          <li><a href="horror.html">Horror</a></li>
-                          <li><a href="genres.html">Romance</a></li>
-                          <li><a href="genres.html">Sports</a></li>
-                          <li><a href="genres.html">War</a></li>
-                        </ul>
-                      </div>
-                      <div className="col-sm-4">
-                        <ul className="multi-column-dropdown">
-                          <li><a href="genres.html">Adventure</a></li>
-                          <li><a href="comedy.html">Comedy</a></li>
-                          <li><a href="genres.html">Documentary</a></li>
-                          <li><a href="genres.html">Fantasy</a></li>
-                          <li><a href="genres.html">Thriller</a></li>
-                        </ul>
-                      </div>
-                      <div className="col-sm-4">
-                        <ul className="multi-column-dropdown">
-                          <li><a href="genres.html">Animation</a></li>
-                          <li><a href="genres.html">Costume</a></li>
-                          <li><a href="genres.html">Drama</a></li>
-                          <li><a href="genres.html">History</a></li>
-                          <li><a href="genres.html">Musical</a></li>
-                          <li><a href="genres.html">Psychological</a></li>
-                        </ul>
-                      </div>
-                      <div className="clearfix"></div>
+                        <div className="col-sm-6">
+                          Movies<hr/>
+                          <ul className="multi-column-dropdown" id="genre-movies-col"></ul>
+                        </div>
+                        
+                        <div className="col-sm-6">
+                          TV<hr/>
+                          <ul className="multi-column-dropdown" id="genre-tv-col"></ul>
+                        </div>
+                        <div className="clearfix"></div>
                       </li>
                     </ul>
                   </li>
-                  <li><a href="series.html">tv - series</a></li>
                   <li><a href="news.html">news</a></li>
                 </ul>
               </nav>

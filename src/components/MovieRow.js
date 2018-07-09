@@ -44,7 +44,7 @@ class MovieRow extends React.Component
     /**
      * Replace the address URL with the manipulated title
      */
-    var genURL = '/' + movie.id + '/' + title;
+    var genURL = '/' + movie.id + '-' + title;
     localStorage.setItem('selMovieID', movie.id);
     localStorage.setItem('movieDetailsURL', genURL);
     window.location.href = genURL;
